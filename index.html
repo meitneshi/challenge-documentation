@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Home - Deadlock Challenges Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Deadlock Challenges Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#deadlock-challenges">Deadlock Challenges</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l3" href="#what-is-a-challenge">What is a challenge ?</a></li>
+        
+            <li><a class="toctree-l3" href="#getting-started">Getting Started</a></li>
+        
+            <li><a class="toctree-l3" href="#i18n">i18n</a></li>
+        
+            <li><a class="toctree-l3" href="#whats-next">What's next</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Types of challenge</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="challenge-types/code/">Code</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="challenge-types/sql/">SQL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="challenge-types/multi-service/">Multi service</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="mode/">Mode</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="how-does-it-work/">How does it work ?</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Deadlock Challenges Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="deadlock-challenges">Deadlock Challenges</h1>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>This documentation is mainly used to help everyone with the creation of their own learning content, through Deadlock platform.</p>
+<h2 id="what-is-a-challenge">What is a challenge ?</h2>
+<p>A challenge is mainly these elements:</p>
+<ul>
+<li>A documentation: instructions for the user</li>
+<li>A template folder: code provided to the user</li>
+<li>A success folder: solution of the challenge</li>
+<li>An app folder: logic to verify user code</li>
+<li>The challenge descriptor: challenge.yml</li>
+<li>Many hints: You can add different hints, each one could be unlock with token, user unlock </li>
+</ul>
+<p>You can discover many elements on the user interface:</p>
+<p><img alt="Challenge interface" src="img/challenge-interface.png" /></p>
+<ol>
+<li>Documentation with briefing (main informations), hints</li>
+<li>Provided code</li>
+<li>Run button is used to executed code without any test</li>
+<li>Submit buttin is used to executed test on user code</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<p>Each challenge came with a special structure, it will be provided by our <a href="https://git.e-biz.fr/deadlock/deadlock-challenges-cli">tool DCLI</a>
+So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.</p>
+<h3 id="install-dcli">Install DCLI</h3>
+<p>Install <code>dcli</code> package using pip:</p>
+<pre><code class="bash">pip install dcli
+</code></pre>
+
+<p>Then you shoud have <code>dcli</code> command on your system. Run <code>dcli --help</code> to check that everything worked well.</p>
+<pre><code class="bash">$ dcli --help
+man page should be printed
+</code></pre>
+
+<h3 id="create-your-first-code-challenge">Create your first code challenge</h3>
+<p>Let's create a Java mission to explain you the concept behind the structure.</p>
+<pre><code class="bash">dcli gen java
+</code></pre>
+
+<p>We will generate a simple challenge where the user must return <code>Hello World!</code>.</p>
+<p><img alt="DCLI gen java" src="img/dcli-gen-java.gif" /></p>
+<p>You can explore the generated <code>code_hello_world</code> directory:</p>
+<pre><code>code_hello_world/
+├── docs
+│   ├── briefing.md
+│   └── fr
+│       └── briefing.md
+├── src
+│   └── main
+│       └── java
+│           ├── app
+│           │   ├── Logger.java
+│           │   ├── Solve.java
+│           │   └── Test.java
+│           ├── success
+│           │   └── HelloWorld.java
+│           └── template
+│               └── HelloWorld.java
+├── challenge.yml
+├── Dockerfile
+├── run.sh
+└── thumbnail.png
+
+</code></pre>
+
+<p>As you saw it, the goal is simple, implement the <code>sayHello()</code> method within <code>template</code> package.
+All files under <code>template</code> package will be served to the user, you can create as much as you want.
+The <code>HelloWorld.java</code> file under <code>success</code> package will be served only when the user succeed the challenge.</p>
+<p>You have to complete all <code>//TODO</code> present in the code.<br />
+Let's start with <code>src/main/java/success/HelloWorld.java</code>, this is the solution file.  </p>
+<pre><code class="java">public static String sayHello() {
+        //TODO write your own solution
+        return null;
+}
+</code></pre>
+
+<p>Pretty simple the method has to return <code>"Hello World!"</code>.<br />
+Next part is to compare the user result with the expected result, this part is done under <code>src/main/java/app/Solve.java</code>.
+Dcli generates some part of code for you but have to complete with your own logic.</p>
+<pre><code class="java">public static void main(String[] args) {
+    try {
+        // user result
+        String userResult = HelloWorld.sayHello();
+        // your solution result
+        String expectedResult = success.HelloWorld.sayHello();
+        //TODO you have to do different tests to be sure user has the good solution.
+        // comparing userResult and expectedResult
+
+        if (expectedResult.equals(userResult)) {
+            // if all test passed successfully
+            Logger.logSuccess();
+        } else {
+            Logger.logFail(expectedResult, userResult);
+            System.exit(1);
+        }
+    } catch (RuntimeException e) {
+        Logger.logException(e);
+        // if something bad happened exit with error code
+        System.exit(1);
+    }
+}
+</code></pre>
+
+<p>What it does is that if the function HelloWorld.sayHello() does not return "Hello World!" or throws an exception,
+it logs an error and exits with an error code.</p>
+<p>In general, there are 2 kinds of outputs you have to take into account.</p>
+<ol>
+<li>Error: The code sent does not compile, does not have the right signature, code did not return the expected result, something bad happened.</li>
+<li>Success: The code did complete normally and returned the expected result</li>
+</ol>
+<p>A simple <code>Logger</code> class is also generated. You can now test your challenge with the following command lines:</p>
+<pre><code class="bash">cd ./code_hello_world
+dcli run . # Run the program, execute the file `src/main/java/app/Test.java`
+dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
+</code></pre>
+
+<p>You can try to modify the <code>HelloWorld.java</code> file under template package to reach the solution like you were the candidate.</p>
+<h3 id="documentation">Documentation</h3>
+<p>The documentation is stored in <strong>code_hello_world/docs/</strong>.
+It contains the Briefing to expose the problem your candidate has to solve and motivate him.
+It should be written in Markdown, it supports HTML tags and LateX language.</p>
+<ul>
+<li>briefing.md: contains the default instructions</li>
+<li>debriefing.md: contains a text provided when user solve the challenge</li>
+<li>hint1.md: first hint user can unlock (optional)</li>
+<li>hint2.md: an other hint (optional)</li>
+</ul>
+<p>examples of hints:<br />
+<strong>hint1.md</strong></p>
+<pre><code class="Markdown">The String that you need to return is the two words that you usually display when you start learning a language for instance.
+It can be considered as a greeting. (PS: the word is not &quot;It Works&quot;)
+</code></pre>
+
+<p><strong>hint2.md</strong></p>
+<pre><code class="Markdown">Alright, the String is case sensitive, so you might want to try multiple cases. Also, we were very emotional when we wrote this challenge, and decided to end the phrase with a &quot;!&quot;
+</code></pre>
+
+<p><strong>N.B.:</strong> hint2 will always be given after hint1.</p>
+<p>At this point, we have a functional Java application that will test the content of a <strong>compiled</strong> HelloWorld.class class and exit the relevant code.
+If you want to understand more how the challenge works and custom more your challenge you can <a href="how-does-it-work/">read this</a>.</p>
+<h2 id="i18n">i18n</h2>
+<p>The default files into the docs folder contains the english translations.
+If you want handle other languages you have to create new directories following this way:</p>
+<ul>
+<li>docs<ul>
+<li>briefing.md</li>
+<li>fr<ul>
+<li>briefing.md</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>and so on.</p>
+<h2 id="whats-next">What's next</h2>
+<p>You can explore different types of challenge:</p>
+<ul>
+<li><a href="challenge-types/hack/">Hack</a></li>
+<li><a href="challenge-types/multi-service/">Multi Service</a></li>
+<li><a href="challenge-types/sql/">SQL</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="challenge-types/code/" class="btn btn-neutral float-right" title="Code">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="challenge-types/code/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-10-21 09:57:27
+-->

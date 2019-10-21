@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>How does it work ? - Deadlock Challenges Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How does it work ?";
+    var mkdocs_page_input_path = "how-does-it-work.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deadlock Challenges Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Types of challenge</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../challenge-types/code/">Code</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../challenge-types/sql/">SQL</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../challenge-types/multi-service/">Multi service</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mode/">Mode</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">How does it work ?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#how-does-it-work">How does it work ?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#dockerfile">Dockerfile</a></li>
+        
+            <li><a class="toctree-l3" href="#challenge-descriptor">Challenge descriptor</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deadlock Challenges Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>How does it work ?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-does-it-work">How does it work ?</h1>
+<p>If you are here, you already read the <a href="/#getting-started">Getting Started</a> and you want to explore more about how a challenge works.
+We are going to explain you different files, </p>
+<p>To be sure to understand the next parts you have to be familiar with:</p>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li>Yaml</li>
+</ul>
+<h4 id="dockerfile">Dockerfile</h4>
+<p>When your candidate submits his code, a Docker container will be created.
+The name of the Docker image will be your challenge name, prefixed with <strong>code_</strong>.<br />
+<strong>Important:</strong> your container should have its own CMD or ENTRYPOINT defined.
+Before your container is executed, your candidate code will be pasted within <strong>template</strong> folder.
+<strong>Where</strong> and <strong>what</strong> this file is is entirely up to you and shall be submitted in the <a href="#challenge-descriptor">descriptor</a>.</p>
+<p>Once the code is inside the container, your container will be ran until completion.
+Note that the STDOUT and STDERR signals will be streamed to the candidate.
+Once it completes, the exit code will be checked.</p>
+<p>If the <strong>exit code</strong> is <strong>0</strong>, the challenge was <strong>completed</strong> successfully.
+<strong>Otherwise</strong>, it means the candidate has <strong>failed</strong>.</p>
+<p>You can custom the Dockerfile has you wish, include external library to allow your user to have new experiences !<br />
+Example of a python challenge with <strong>nymphy, sklearn and pandas libraries</strong>:  </p>
+<pre><code class="Dockerfile">FROM python:3.7-slim
+RUN pip install numpy sklearn pandas
+WORKDIR /
+COPY src src
+COPY wine.csv src/main/
+COPY run.sh /
+RUN chmod +x run.sh
+ENTRYPOINT [&quot;/run.sh&quot;]
+</code></pre>
+
+<p>The build step is done only one time when your challenge is accepeted by the Deadlock team.</p>
+<h4 id="challenge-descriptor">Challenge descriptor</h4>
+<p>Each challenge has its own challenge descriptor in challengename/challenge.yaml.
+It is used to create the challenge container and retrieve your specifications regarding the language and file target.</p>
+<pre><code>name: code_halloween_candy # your challenge name. MUST be equal to the challenge folder
+label: Halloween Candy # your challenge label
+description: Help your brother split his halloween candy # your challenge description, in english
+level: jarjarbinks # your challenge level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
+type: CODING # this is a coding game
+xp: # the experience it should bring. any label is supported
+  programming: 1 # this is a weight, not a number
+  java: 1
+coding: # coding game specifics
+  templateDirectory: src/java/main/template # code provided to the user
+  successDirectory: src/java/main/success # solution of the challenge
+  target: CandySplitter.java # the target file path, consider as Main file
+  editorMode: java # the language to be displayed by the web editor
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mode/" class="btn btn-neutral" title="Mode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mode/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
