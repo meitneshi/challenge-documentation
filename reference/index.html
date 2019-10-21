@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
+  
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Mode - Deadlock Challenges Docs</title>
+  <title>Reference level challenge list - Deadlock Challenges Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mode";
-    var mkdocs_page_input_path = "mode/index.md";
+    var mkdocs_page_name = "Reference level challenge list";
+    var mkdocs_page_input_path = "reference.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -72,18 +72,9 @@
     </ul>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Mode</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#sandbox">Sandbox</a></li>
-    
-
-    <li class="toctree-l2"><a href="#blacklist-words">Blacklist words</a></li>
-    
-
-    </ul>
+    <a class="" href="../mode/">Mode</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -118,7 +109,7 @@
     
       
     
-    <li>Mode</li>
+    <li>Reference level challenge list</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -128,40 +119,43 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="sandbox">Sandbox</h3>
-<p>There is also an other mission mode, sandbox one. Common mission must contains a list of test
-to allow the user to succeed the mission. But sometimes it can be painful or impossible to implement test to make sure the
-user understood and succeed well the challenge. So you can also create a mission without any test but you still have to create
-the Test class. The professor will be able to validate the mission via the student page.<br />
-The only thing to add is <code>sandboxed: true</code> to the challenge.yaml file.
-Example:  </p>
-<pre><code class="yaml">name: code_interview_card_game
-label: Card Game
-description: Card Game
-level: ewok
-type: CODING
-sandboxed: true
-</code></pre>
-
-<h3 id="blacklist-words">Blacklist words</h3>
-<p>By default there are some words the user cannot use into his code. You can find example into <code>resources/default/blacklist</code>.
-You can also create your own blacklist for your challenge by creating a blacklist file next to the challenge.yaml, then fill it as a csv file. It also supports regex expressions.
-Example of blacklist file:  </p>
-<pre><code>[^&lt;&gt;](&lt;|&gt;)[^&gt;&lt;],(System\.exit\()(\d)*(\)),(Runtime\.getRuntime\(\)\.exit\(\d*\))
-</code></pre>
+                <h1 id="reference-level-challenge-list">Reference level challenge list</h1>
+<p>Hence you have some example of already existing challenges. Each one has been set into a level, you can use them
+to classify your challenge among the five levels.</p>
+<table>
+  <tr>
+    <th>Jajarbinks</th>
+    <th>Ewok</th>
+    <th>Padawan</th>
+    <th>Jedi</th>
+    <th>Master</th>
+  </tr>
+  <tr>
+    <td><a href="https://takima.deadlock.io/mission/code_lets_dance">Let's dance</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_collision_1_2_box_cube">Collision box in da box</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_kotlin_game_of_life">Game of Life</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_collision_2_1_segment_circle">Collision circle vs segment</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_mario_needs_help">Mario Needs Help</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://takima.deadlock.io/mission/code_romanizer">Romanizer</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_fibo">Fibo challenge</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_midnight_club_basics2">Midnight Club Basics 2</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_military_satellite">Military Satellite</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://takima.deadlock.io/mission/code_caesar_decipher">Caesar Decipher</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_secret_message">The Secret Message</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_recommendation_netflix">Recommendation Netflix</a></td>
+    <td><a href="https://takima.deadlock.io/mission/code_out_of_pub">Out of pub</a></td>
+    <td></td>
+  </tr>
+</table>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../how-does-it-work/" class="btn btn-neutral float-right" title="How does it work ?">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../challenge-types/multi-service/" class="btn btn-neutral" title="Multi service"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -185,10 +179,6 @@ Example of blacklist file:  </p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../challenge-types/multi-service/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../how-does-it-work/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -198,8 +188,3 @@ Example of blacklist file:  </p>
 
 </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-10-21 11:10:43
--->
