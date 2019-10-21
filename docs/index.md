@@ -22,11 +22,11 @@ You can discover many elements on the user interface:
 
 1. Documentation with briefing (main informations), hints
 2. Provided code
-3. Run button is used to executed code without any test
-4. Submit buttin is used to executed test on user code
+3. Run button is used to execute code without any test
+4. Submit button is used to execute test on user code
 
 ## Getting Started
-Each challenge came with a special structure, it will be provided by our [tool DCLI](https://git.e-biz.fr/deadlock/deadlock-challenges-cli)
+Each challenge came with a special structure, it will be provided by our [DCLI tool](https://github.com/deadlock-resources/dcli)
 So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.
 
 ### Install DCLI
@@ -168,6 +168,18 @@ If you want handle other languages you have to create new directories following 
         * briefing.md
 
 and so on.
+
+## Level
+Each challenge has his own level
+
+ - Jajarbinks (easiest)
+ - Ewok
+ - Padawan
+ - Jedi
+ - Master (hardest)  
+
+When you create your own challenge your can help you with the [references](./reference.md) to set a correct level
+to your challenge.
 
 ## What's next
 You can explore different types of challenge:
