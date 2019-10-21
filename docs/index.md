@@ -187,3 +187,7 @@ You can explore different types of challenge:
 * [Hack](challenge-types/hack.md)
 * [Multi Service](challenge-types/multi-service.md)
 * [SQL](challenge-types/sql.md)
+
+
+## Getting help
+To get help with Deadlock Challenge, please use the [GitHub challenge example issues](https://github.com/deadlock-resources/challenge-examples/issues) or [GitHub challenge documentation issues](https://github.com/deadlock-resources/challenge-documentation/issues).

@@ -7,7 +7,8 @@ nav:
     - Multi service: challenge-types/multi-service.md
   - Mode: mode/index.md
   - How does it work ?: how-does-it-work.md
-  - About: about.md
+  - About:
+    - Contributing: contributing.md
 theme: readthedocs
 
 
