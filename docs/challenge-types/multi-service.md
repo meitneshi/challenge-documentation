@@ -21,4 +21,4 @@ exposed_ports:
   - 5432
 ```
 
-You can find an example of a multi services challenge though [SQL type challenge](/challenge-types/sql).
+You can find an example of a multi services challenge though [SQL type challenge](challenge-types/sql).

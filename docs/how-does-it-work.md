@@ -47,6 +47,8 @@ label: Halloween Candy # your challenge label
 description: Help your brother split his halloween candy # your challenge description, in english
 level: jarjarbinks # your challenge level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
 type: CODING # this is a coding game
+meta:
+  private: true # if true mission will only be visible on your instance (youSchool.deadlock.io), default to false, visible by everyone.
 xp: # the experience it should bring. any label is supported
   programming: 1 # this is a weight, not a number
   java: 1
