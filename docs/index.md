@@ -30,10 +30,13 @@ Each challenge came with a special structure, it will be provided by our [DCLI t
 So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.
 
 ### Install DCLI
-Install `dcli` package using pip:
-``` bash
-pip install dcli
-```
+Requirements:
+
+* Python >= 3.2
+* pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
+
+Install `dcli` package using pip:  
+**Not available on pypi, [install from sources](https://github.com/deadlock-resources/dcli#install-from-sources).**
 
 Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.
 ``` bash
