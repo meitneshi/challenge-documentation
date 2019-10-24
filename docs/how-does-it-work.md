@@ -13,7 +13,7 @@ When your candidate submits his code, a Docker container will be created.
 The name of the Docker image will be your challenge name, prefixed with **code_**.  
 **Important:** your container should have its own CMD or ENTRYPOINT defined.
 Before your container is executed, your candidate code will be pasted within **template** folder.
-**Where** and **what** this file is is entirely up to you and shall be submitted in the [descriptor](#challenge-descriptor).
+**Where** and **what** this file is entirely up to you and shall be submitted in the [descriptor](#challenge-descriptor).
 
 Once the code is inside the container, your container will be ran until completion.
 Note that the STDOUT and STDERR signals will be streamed to the candidate.
