@@ -66,7 +66,7 @@ code_hello_world/
 │           ├── app
 │           │   ├── Logger.java
 │           │   ├── Solve.java
-│           │   └── Test.java
+│           │   └── Run.java
 │           ├── success
 │           │   └── HelloWorld.java
 │           └── template
@@ -128,7 +128,7 @@ In general, there are 2 kinds of outputs you have to take into account.
 A simple `Logger` class is also generated. You can now test your challenge with the following command lines:
 ```bash
 cd ./code_hello_world
-dcli run . # Run the program, execute the file `src/main/java/app/Test.java`
+dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
 dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
 ```
 You can try to modify the `HelloWorld.java` file under template package to reach the solution like you were the candidate.

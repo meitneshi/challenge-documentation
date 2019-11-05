@@ -3,7 +3,7 @@
 There is also an other mission mode, sandbox one. Common mission must contains a list of test
 to allow the user to succeed the mission. But sometimes it can be painful or impossible to implement test to make sure the
 user understood and succeed well the challenge. So you can also create a mission without any test but you still have to create
-the Test class. The professor will be able to validate the mission via the student page.  
+the Run class. The professor will be able to validate the mission via the student page.  
 The only thing to add is `sandboxed: true` to the challenge.yaml file.
 Example:  
 ```yaml
