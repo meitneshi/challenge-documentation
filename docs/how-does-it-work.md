@@ -42,6 +42,7 @@ Each challenge has its own challenge descriptor in challengename/challenge.yaml.
 It is used to create the challenge container and retrieve your specifications regarding the language and file target.
 
 ```
+version: 1.0 # You have to increase it if you have changed something in your code
 name: code_halloween_candy # your challenge name. MUST be equal to the challenge folder
 label: Halloween Candy # your challenge label
 description: Help your brother split his halloween candy # your challenge description, in english
