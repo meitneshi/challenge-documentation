@@ -152,7 +152,7 @@ We are going to explain you different files, </p>
 The name of the Docker image will be your challenge name, prefixed with <strong>code_</strong>.<br />
 <strong>Important:</strong> your container should have its own CMD or ENTRYPOINT defined.
 Before your container is executed, your candidate code will be pasted within <strong>template</strong> folder.
-<strong>Where</strong> and <strong>what</strong> this file is is entirely up to you and shall be submitted in the <a href="#challenge-descriptor">descriptor</a>.</p>
+<strong>Where</strong> and <strong>what</strong> this file is entirely up to you and shall be submitted in the <a href="#challenge-descriptor">descriptor</a>.</p>
 <p>Once the code is inside the container, your container will be ran until completion.
 Note that the STDOUT and STDERR signals will be streamed to the candidate.
 Once it completes, the exit code will be checked.</p>
@@ -174,7 +174,8 @@ ENTRYPOINT [&quot;/run.sh&quot;]
 <h4 id="challenge-descriptor">Challenge descriptor</h4>
 <p>Each challenge has its own challenge descriptor in challengename/challenge.yaml.
 It is used to create the challenge container and retrieve your specifications regarding the language and file target.</p>
-<pre><code>name: code_halloween_candy # your challenge name. MUST be equal to the challenge folder
+<pre><code>version: 1.0 # You have to increase it if you have changed something in your code
+name: code_halloween_candy # your challenge name. MUST be equal to the challenge folder
 label: Halloween Candy # your challenge label
 description: Help your brother split his halloween candy # your challenge description, in english
 level: jarjarbinks # your challenge level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
