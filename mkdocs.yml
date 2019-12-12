@@ -1,8 +1,9 @@
-site_name: Deadlock Challenges Docs
+site_name: Deadlock Missions Docs
 nav:
   - Home: index.md
   - Types of challenge:
     - Code: challenge-types/code.md
+    - Score: challenge-types/score.md
     - SQL: challenge-types/sql.md
     - Multi service: challenge-types/multi-service.md
   - Mode: mode/index.md
