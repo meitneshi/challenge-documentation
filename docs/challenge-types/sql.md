@@ -1,7 +1,11 @@
-### SQL Challenges
-There is two main kinds of SQL challenges:
+### SQL missions
+A SQL mission is a code mission with one [/multi-service/](service) as database.
+The main container will connect to the service, execute the user queries on it, then will check everything
+went well.
 
-#### Read-only challenges
+There is two main kinds of SQL missions:
+
+#### Read-only missions
 For example your answer is something like
 ```SELECT * FROM public."myTable" ...```
 In this case, you need to 
@@ -12,8 +16,8 @@ In this case, you need to
 _You need to run your order first to avoid rollback the database in case of the user modifies it_
 
 
-#### Read-write challenges
-This kind of challenge is a little bit more complicated to validate. They mainly start with 
+#### Read-write missions
+This kind of mission is a little bit more complicated to validate. They mainly start with 
 ```DELETE/UPDATE/ALTER TABLE ... ```
 In this case, you need to write a checker.sql (usually with a ```SELECT``` request) file in addition to success/query.sql. 
 The success/query.sql will modifies the database (like the expected answer) and the checker.sql will select all interesting rows in the database

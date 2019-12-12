@@ -1,4 +1,4 @@
-# Deadlock Challenges
+# Deadlock missions
 
 ---
 
@@ -6,14 +6,14 @@
 
 This documentation is mainly used to help everyone with the creation of their own learning content, through Deadlock platform.
 
-## What is a challenge ?
-A challenge is mainly these elements:
+## What is a mission ?
+A mission is mainly these elements:
 
 * A documentation: instructions for the user
 * A template folder: code provided to the user
 * A success folder: solution of the challenge
 * An app folder: logic to verify user code
-* The challenge descriptor: challenge.yml
+* The mission descriptor: challenge.yml
 * Many hints: You can add different hints, each one could be unlock with token, user unlock 
 
 You can discover many elements on the user interface:
@@ -26,7 +26,7 @@ You can discover many elements on the user interface:
 4. Submit button is used to execute test on user code
 
 ## Getting Started
-Each challenge came with a special structure, it will be provided by our [DCLI tool](https://github.com/deadlock-resources/dcli)
+Each mission came with a special structure, it will be provided by our [DCLI tool](https://github.com/deadlock-resources/dcli)
 So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.
 
 ### Install DCLI
@@ -49,7 +49,7 @@ Let's create a Java mission to explain you the concept behind the structure.
 ```bash
 dcli gen java
 ```
-We will generate a simple challenge where the user must return `Hello World!`.
+We will generate a simple mission where the user must return `Hello World!`.
 
 ![DCLI gen java](img/dcli-gen-java.gif)
 
@@ -125,7 +125,7 @@ In general, there are 2 kinds of outputs you have to take into account.
 1. Error: The code sent does not compile, does not have the right signature, code did not return the expected result, something bad happened.
 2. Success: The code did complete normally and returned the expected result
 
-A simple `Logger` class is also generated. You can now test your challenge with the following command lines:
+A simple `Logger` class is also generated. You can now test your mission with the following command lines:
 ```bash
 cd ./code_hello_world
 dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
@@ -158,7 +158,7 @@ Alright, the String is case sensitive, so you might want to try multiple cases. 
 **N.B.:** hint2 will always be given after hint1.
 
 At this point, we have a functional Java application that will test the content of a **compiled** HelloWorld.class class and exit the relevant code.
-If you want to understand more how the challenge works and custom more your challenge you can [read this](how-does-it-work.md).
+If you want to understand more how the mission works and custom more your mission you can [read this](how-does-it-work.md).
 
 
 ## i18n
@@ -173,7 +173,7 @@ If you want handle other languages you have to create new directories following 
 and so on.
 
 ## Level
-Each challenge has his own level
+Each mission has his own level
 
  - Jajarbinks (easiest)
  - Ewok
@@ -181,7 +181,7 @@ Each challenge has his own level
  - Jedi
  - Master (hardest)  
 
-When you create your own challenge your can help you with the [references](./reference.md) to set a correct level
+When you create your own mission your can help you with the [references](./reference.md) to set a correct level
 to your challenge.
 
 ## What's next
@@ -193,4 +193,4 @@ You can explore different types of challenge:
 
 
 ## Getting help
-To get help with Deadlock Challenge, please use the [GitHub challenge example issues](https://github.com/deadlock-resources/challenge-examples/issues) or [GitHub challenge documentation issues](https://github.com/deadlock-resources/challenge-documentation/issues).
+To get help with Deadlock Challenge, please use the [GitHub mission example issues](https://github.com/deadlock-resources/challenge-examples/issues) or [GitHub mission documentation issues](https://github.com/deadlock-resources/challenge-documentation/issues).

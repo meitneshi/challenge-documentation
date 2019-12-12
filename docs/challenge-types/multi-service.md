@@ -1,4 +1,4 @@
-## Multi-service challenges
+## Multi-service missions
 Sometimes, you may have to declare multiple services in your challenge.
 This feature is fully supported and uses containers within one network.
 
@@ -11,7 +11,6 @@ In this folder, you must declare at least two files:
  * The service container **Dockerfile**
 
 
-
 ### The service descriptor
 The service descriptor can expose ports and a specific alias (which must be the service name).
 Following on our example, the **db** service would be:
@@ -21,4 +20,4 @@ exposed_ports:
   - 5432
 ```
 
-You can find an example of a multi services challenge though [SQL type challenge](challenge-types/sql).
+You can find an example of a multi services mission though [SQL type challenge](challenge-types/sql).

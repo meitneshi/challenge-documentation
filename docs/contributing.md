@@ -1,4 +1,4 @@
-# Contributing to Deadlock Challenges
+# Contributing to Deadlock missions
 
 An introduction to contributing to the Deadlock project.
 

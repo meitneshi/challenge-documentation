@@ -1,6 +1,6 @@
-# Reference level challenge list  
-Hence you have some example of already existing challenges. Each one has been set into a level, you can use them
-to classify your challenge among the five levels.
+# Reference level mission list  
+Hence you have some example of already existing missions. Each one has been set into a level, you can use them
+to classify your mission among the five levels.
 
 <table>
   <tr>
