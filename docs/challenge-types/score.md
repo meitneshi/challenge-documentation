@@ -26,7 +26,7 @@ You also have to specify within the `challenge.yaml` different fields:
 ```
 
 At the end on the interface your users will get a new tab next to the **Console**.
-![Example score Python](/img/example-score.png)
+![Example score Python](img/example-score.png)
 
 ### Example
 [code_score_python](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python)
