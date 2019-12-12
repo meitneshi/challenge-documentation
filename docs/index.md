@@ -42,6 +42,8 @@ Then you shoud have `dcli` command on your system. Run `dcli --help` to check th
 ``` bash
 $ dcli --help
 man page should be printed
+$ dcli version
+current is 0.0.8
 ```
 
 ### Create your first code challenge
