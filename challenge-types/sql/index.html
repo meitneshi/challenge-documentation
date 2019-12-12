@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>SQL - Deadlock Challenges Docs</title>
+  <title>SQL - Deadlock Missions Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Deadlock Challenges Docs</a>
+        <a href="../.." class="icon icon-home"> Deadlock Missions Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -61,18 +61,22 @@
                     
     <a class="" href="../code/">Code</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../score/">Score</a>
+                </li>
                 <li class=" current">
                     
     <a class="current" href="./">SQL</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#sql-challenges">SQL Challenges</a></li>
+    <li class="toctree-l3"><a href="#sql-missions">SQL missions</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#read-only-challenges">Read-only challenges</a></li>
+            <li><a class="toctree-l4" href="#read-only-missions">Read-only missions</a></li>
         
-            <li><a class="toctree-l4" href="#read-write-challenges">Read-write challenges</a></li>
+            <li><a class="toctree-l4" href="#read-write-missions">Read-write missions</a></li>
         
         </ul>
     
@@ -120,7 +124,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Deadlock Challenges Docs</a>
+        <a href="../..">Deadlock Missions Docs</a>
       </nav>
 
       
@@ -146,9 +150,12 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="sql-challenges">SQL Challenges</h3>
-<p>There is two main kinds of SQL challenges:</p>
-<h4 id="read-only-challenges">Read-only challenges</h4>
+                <h3 id="sql-missions">SQL missions</h3>
+<p>A SQL mission is a code mission with one <a href="service">/multi-service/</a> as database.
+The main container will connect to the service, execute the user queries on it, then will check everything
+went well.</p>
+<p>There is two main kinds of SQL missions:</p>
+<h4 id="read-only-missions">Read-only missions</h4>
 <p>For example your answer is something like
 <code>SELECT * FROM public."myTable" ...</code>
 In this case, you need to 
@@ -156,8 +163,8 @@ In this case, you need to
 * Run the given answer and store answer <em><strong>only after !</strong></em>
 * Compare both answer</p>
 <p><em>You need to run your order first to avoid rollback the database in case of the user modifies it</em></p>
-<h4 id="read-write-challenges">Read-write challenges</h4>
-<p>This kind of challenge is a little bit more complicated to validate. They mainly start with 
+<h4 id="read-write-missions">Read-write missions</h4>
+<p>This kind of mission is a little bit more complicated to validate. They mainly start with 
 <code>DELETE/UPDATE/ALTER TABLE ...</code>
 In this case, you need to write a checker.sql (usually with a <code>SELECT</code> request) file in addition to success/query.sql. 
 The success/query.sql will modifies the database (like the expected answer) and the checker.sql will select all interesting rows in the database</p>
@@ -225,7 +232,7 @@ The success/query.sql will modifies the database (like the expected answer) and 
         <a href="../multi-service/" class="btn btn-neutral float-right" title="Multi service">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../code/" class="btn btn-neutral" title="Code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../score/" class="btn btn-neutral" title="Score"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -251,7 +258,7 @@ The success/query.sql will modifies the database (like the expected answer) and 
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../code/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../score/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../multi-service/" style="color: #fcfcfc">Next &raquo;</a></span>

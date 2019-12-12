@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - Deadlock Challenges Docs</title>
+  <title>Home - Deadlock Missions Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Deadlock Challenges Docs</a>
+        <a href="." class="icon icon-home"> Deadlock Missions Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -53,13 +53,13 @@
     <a class="current" href=".">Home</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#deadlock-challenges">Deadlock Challenges</a></li>
+    <li class="toctree-l2"><a href="#deadlock-missions">Deadlock missions</a></li>
     
         <ul>
         
             <li><a class="toctree-l3" href="#overview">Overview</a></li>
         
-            <li><a class="toctree-l3" href="#what-is-a-challenge">What is a challenge ?</a></li>
+            <li><a class="toctree-l3" href="#what-is-a-mission">What is a mission ?</a></li>
         
             <li><a class="toctree-l3" href="#getting-started">Getting Started</a></li>
         
@@ -84,6 +84,10 @@
                 <li class="">
                     
     <a class="" href="challenge-types/code/">Code</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="challenge-types/score/">Score</a>
                 </li>
                 <li class="">
                     
@@ -127,7 +131,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Deadlock Challenges Docs</a>
+        <a href=".">Deadlock Missions Docs</a>
       </nav>
 
       
@@ -149,18 +153,18 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="deadlock-challenges">Deadlock Challenges</h1>
+                <h1 id="deadlock-missions">Deadlock missions</h1>
 <hr />
 <h2 id="overview">Overview</h2>
 <p>This documentation is mainly used to help everyone with the creation of their own learning content, through Deadlock platform.</p>
-<h2 id="what-is-a-challenge">What is a challenge ?</h2>
-<p>A challenge is mainly these elements:</p>
+<h2 id="what-is-a-mission">What is a mission ?</h2>
+<p>A mission is mainly these elements:</p>
 <ul>
 <li>A documentation: instructions for the user</li>
 <li>A template folder: code provided to the user</li>
 <li>A success folder: solution of the challenge</li>
 <li>An app folder: logic to verify user code</li>
-<li>The challenge descriptor: challenge.yml</li>
+<li>The mission descriptor: challenge.yml</li>
 <li>Many hints: You can add different hints, each one could be unlock with token, user unlock </li>
 </ul>
 <p>You can discover many elements on the user interface:</p>
@@ -172,7 +176,7 @@
 <li>Submit button is used to execute test on user code</li>
 </ol>
 <h2 id="getting-started">Getting Started</h2>
-<p>Each challenge came with a special structure, it will be provided by our <a href="https://github.com/deadlock-resources/dcli">DCLI tool</a>
+<p>Each mission came with a special structure, it will be provided by our <a href="https://github.com/deadlock-resources/dcli">DCLI tool</a>
 So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.</p>
 <h3 id="install-dcli">Install DCLI</h3>
 <p>Requirements:</p>
@@ -192,7 +196,7 @@ man page should be printed
 <pre><code class="bash">dcli gen java
 </code></pre>
 
-<p>We will generate a simple challenge where the user must return <code>Hello World!</code>.</p>
+<p>We will generate a simple mission where the user must return <code>Hello World!</code>.</p>
 <p><img alt="DCLI gen java" src="img/dcli-gen-java.gif" /></p>
 <p>You can explore the generated <code>code_hello_world</code> directory:</p>
 <pre><code>code_hello_world/
@@ -263,7 +267,7 @@ it logs an error and exits with an error code.</p>
 <li>Error: The code sent does not compile, does not have the right signature, code did not return the expected result, something bad happened.</li>
 <li>Success: The code did complete normally and returned the expected result</li>
 </ol>
-<p>A simple <code>Logger</code> class is also generated. You can now test your challenge with the following command lines:</p>
+<p>A simple <code>Logger</code> class is also generated. You can now test your mission with the following command lines:</p>
 <pre><code class="bash">cd ./code_hello_world
 dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
 dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
@@ -292,7 +296,7 @@ It can be considered as a greeting. (PS: the word is not &quot;It Works&quot;)
 
 <p><strong>N.B.:</strong> hint2 will always be given after hint1.</p>
 <p>At this point, we have a functional Java application that will test the content of a <strong>compiled</strong> HelloWorld.class class and exit the relevant code.
-If you want to understand more how the challenge works and custom more your challenge you can <a href="how-does-it-work/">read this</a>.</p>
+If you want to understand more how the mission works and custom more your mission you can <a href="how-does-it-work/">read this</a>.</p>
 <h2 id="i18n">i18n</h2>
 <p>The default files into the docs folder contains the english translations.
 If you want handle other languages you have to create new directories following this way:</p>
@@ -308,7 +312,7 @@ If you want handle other languages you have to create new directories following 
 </ul>
 <p>and so on.</p>
 <h2 id="level">Level</h2>
-<p>Each challenge has his own level</p>
+<p>Each mission has his own level</p>
 <ul>
 <li>Jajarbinks (easiest)</li>
 <li>Ewok</li>
@@ -316,7 +320,7 @@ If you want handle other languages you have to create new directories following 
 <li>Jedi</li>
 <li>Master (hardest)  </li>
 </ul>
-<p>When you create your own challenge your can help you with the <a href="reference/">references</a> to set a correct level
+<p>When you create your own mission your can help you with the <a href="reference/">references</a> to set a correct level
 to your challenge.</p>
 <h2 id="whats-next">What's next</h2>
 <p>You can explore different types of challenge:</p>
@@ -326,7 +330,7 @@ to your challenge.</p>
 <li><a href="challenge-types/sql/">SQL</a></li>
 </ul>
 <h2 id="getting-help">Getting help</h2>
-<p>To get help with Deadlock Challenge, please use the <a href="https://github.com/deadlock-resources/challenge-examples/issues">GitHub challenge example issues</a> or <a href="https://github.com/deadlock-resources/challenge-documentation/issues">GitHub challenge documentation issues</a>.</p>
+<p>To get help with Deadlock Challenge, please use the <a href="https://github.com/deadlock-resources/challenge-examples/issues">GitHub mission example issues</a> or <a href="https://github.com/deadlock-resources/challenge-documentation/issues">GitHub mission documentation issues</a>.</p>
               
             </div>
           </div>
@@ -375,5 +379,5 @@ to your challenge.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-07 16:35:21
+Build Date UTC : 2019-12-12 10:35:32
 -->

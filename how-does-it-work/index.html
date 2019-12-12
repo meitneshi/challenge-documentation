@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>How does it work ? - Deadlock Challenges Docs</title>
+  <title>How does it work ? - Deadlock Missions Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Deadlock Challenges Docs</a>
+        <a href=".." class="icon icon-home"> Deadlock Missions Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -60,6 +60,10 @@
                 <li class="">
                     
     <a class="" href="../challenge-types/code/">Code</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../challenge-types/score/">Score</a>
                 </li>
                 <li class="">
                     
@@ -88,7 +92,7 @@
         
             <li><a class="toctree-l3" href="#dockerfile">Dockerfile</a></li>
         
-            <li><a class="toctree-l3" href="#challenge-descriptor">Challenge descriptor</a></li>
+            <li><a class="toctree-l3" href="#mission-descriptor">mission descriptor</a></li>
         
         </ul>
     
@@ -117,7 +121,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Deadlock Challenges Docs</a>
+        <a href="..">Deadlock Missions Docs</a>
       </nav>
 
       
@@ -140,7 +144,7 @@
             <div class="section">
               
                 <h1 id="how-does-it-work">How does it work ?</h1>
-<p>If you are here, you already read the <a href="/#getting-started">Getting Started</a> and you want to explore more about how a challenge works.
+<p>If you are here, you already read the <a href="/#getting-started">Getting Started</a> and you want to explore more about how a mission works.
 We are going to explain you different files, </p>
 <p>To be sure to understand the next parts you have to be familiar with:</p>
 <ul>
@@ -149,17 +153,17 @@ We are going to explain you different files, </p>
 </ul>
 <h4 id="dockerfile">Dockerfile</h4>
 <p>When your candidate submits his code, a Docker container will be created.
-The name of the Docker image will be your challenge name, prefixed with <strong>code_</strong>.<br />
+The name of the Docker image will be your mission name, prefixed with <strong>code_</strong>.<br />
 <strong>Important:</strong> your container should have its own CMD or ENTRYPOINT defined.
 Before your container is executed, your candidate code will be pasted within <strong>template</strong> folder.
 <strong>Where</strong> and <strong>what</strong> this file is entirely up to you and shall be submitted in the <a href="#challenge-descriptor">descriptor</a>.</p>
 <p>Once the code is inside the container, your container will be ran until completion.
 Note that the STDOUT and STDERR signals will be streamed to the candidate.
 Once it completes, the exit code will be checked.</p>
-<p>If the <strong>exit code</strong> is <strong>0</strong>, the challenge was <strong>completed</strong> successfully.
+<p>If the <strong>exit code</strong> is <strong>0</strong>, the mission was <strong>completed</strong> successfully.
 <strong>Otherwise</strong>, it means the candidate has <strong>failed</strong>.</p>
 <p>You can custom the Dockerfile has you wish, include external library to allow your user to have new experiences !<br />
-Example of a python challenge with <strong>nymphy, sklearn and pandas libraries</strong>:  </p>
+Example of a python mission with <strong>nymphy, sklearn and pandas libraries</strong>:  </p>
 <pre><code class="Dockerfile">FROM python:3.7-slim
 RUN pip install numpy sklearn pandas
 WORKDIR /
@@ -170,15 +174,15 @@ RUN chmod +x run.sh
 ENTRYPOINT [&quot;/run.sh&quot;]
 </code></pre>
 
-<p>The build step is done only one time when your challenge is accepeted by the Deadlock team.</p>
-<h4 id="challenge-descriptor">Challenge descriptor</h4>
-<p>Each challenge has its own challenge descriptor in challengename/challenge.yaml.
-It is used to create the challenge container and retrieve your specifications regarding the language and file target.</p>
+<p>The build step is done only one time when your mission is accepeted by the Deadlock team.</p>
+<h4 id="mission-descriptor">mission descriptor</h4>
+<p>Each mission has its own mission descriptor in challengename/challenge.yaml.
+It is used to create the mission container and retrieve your specifications regarding the language and file target.</p>
 <pre><code>version: 1.0 # You have to increase it if you have changed something in your code
-name: code_halloween_candy # your challenge name. MUST be equal to the challenge folder
-label: Halloween Candy # your challenge label
-description: Help your brother split his halloween candy # your challenge description, in english
-level: jarjarbinks # your challenge level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
+name: code_halloween_candy # your mission name. MUST be equal to the mission folder
+label: Halloween Candy # your mission label
+description: Help your brother split his halloween candy # your mission description, in english
+level: jarjarbinks # your mission level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
 type: CODING # this is a coding game
 meta:
   private: true # if true mission will only be visible on your instance (youSchool.deadlock.io), default to false, visible by everyone.
