@@ -35,15 +35,15 @@ Requirements:
 * Python >= 3.2
 * pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
 
-Install `dcli` package using pip:  
-**Not available on pypi, [install from sources](https://github.com/deadlock-resources/dcli#install-from-sources).**
+Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:  
+`pip install deadlock-cli`  
 
 Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.
 ``` bash
 $ dcli --help
 man page should be printed
 $ dcli version
-current is 0.0.8
+current is 0.0.81
 ```
 
 ### Create your first code challenge
