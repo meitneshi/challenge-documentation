@@ -43,7 +43,7 @@ Then you shoud have `dcli` command on your system. Run `dcli --help` to check th
 $ dcli --help
 man page should be printed
 $ dcli version
-current is 0.0.81
+current is 0.0.9
 ```
 
 ### Create your first code challenge
