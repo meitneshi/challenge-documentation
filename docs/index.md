@@ -32,18 +32,21 @@ So it's pretty easy to start any challenge, you will just have to care what you 
 ### Install DCLI
 Requirements:
 
+* Docker
 * Python >= 3.2
 * pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
 
 Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:  
-`pip install deadlock-cli`  
+`pip3 install deadlock-cli`  
 
-Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.
+
+Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.  
+*If you have something like `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
 ``` bash
 $ dcli --help
 man page should be printed
 $ dcli version
-current is 0.0.9
+current is 0.0.96
 ```
 
 ### Create your first code challenge
