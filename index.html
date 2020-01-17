@@ -181,16 +181,18 @@ So it's pretty easy to start any challenge, you will just have to care what you 
 <h3 id="install-dcli">Install DCLI</h3>
 <p>Requirements:</p>
 <ul>
+<li>Docker</li>
 <li>Python &gt;= 3.2</li>
 <li>pip installed (<a href="https://pip.pypa.io/en/stable/installing/">with python</a> or from your package manager)</li>
 </ul>
 <p>Install <a href="https://pypi.org/project/deadlock-cli/">dcli</a> package using pip:<br />
-<code>pip install deadlock-cli</code>  </p>
-<p>Then you shoud have <code>dcli</code> command on your system. Run <code>dcli --help</code> to check that everything worked well.</p>
+<code>pip3 install deadlock-cli</code>  </p>
+<p>Then you shoud have <code>dcli</code> command on your system. Run <code>dcli --help</code> to check that everything worked well.<br />
+<em>If you have something like <code>module not found</code> when you run <code>dcli</code> try to export <code>/home/user/.local/bin/</code> to your $PATH.</em></p>
 <pre><code class="bash">$ dcli --help
 man page should be printed
 $ dcli version
-current is 0.0.9
+current is 0.0.96
 </code></pre>
 
 <h3 id="create-your-first-code-challenge">Create your first code challenge</h3>
@@ -381,5 +383,5 @@ to your challenge.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-24 09:09:12
+Build Date UTC : 2020-01-17 15:30:50
 -->
