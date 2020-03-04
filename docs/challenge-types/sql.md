@@ -1,5 +1,5 @@
 # SQL missions
-A SQL mission is a code mission with a remote database as service, [more information about service](#multi-service-missions).
+A SQL mission is a code mission with a remote database as service, [more information about service](../multi-service-missions).
 The main container will connect to the service, execute the user queries on it, then will check everything
 went well.
 
