@@ -42,24 +42,24 @@ Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:
 
 Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.  
 *If you have something like `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
-``` bash
-$ dcli --help
-man page should be printed
-$ dcli version
+```bash
+> dcli --help
+# man page should be printed
+> dcli version
 current is 0.0.96
 ```
 
 ### Create your first code challenge
 Let's create a Java mission to explain you the concept behind the structure.
 ```bash
-dcli gen java
+> dcli gen java
 ```
 We will generate a simple mission where the user must return `Hello World!`.
 
 ![DCLI gen java](img/dcli-gen-java.gif)
 
 You can explore the generated `code_hello_world` directory:
-```
+```bash
 code_hello_world/
 ├── docs
 │   ├── briefing.md
@@ -91,8 +91,8 @@ You have to complete all `//TODO` present in the code.
 Let's start with `src/main/java/success/HelloWorld.java`, this is the solution file.  
 ```java
 public static String sayHello() {
-        //TODO write your own solution
-        return null;
+    //TODO write your own solution
+    return null;
 }
 ```
 Pretty simple the method has to return `"Hello World!"`.  
@@ -131,10 +131,10 @@ In general, there are 2 kinds of outputs you have to take into account.
 2. Success: The code did complete normally and returned the expected result
 
 A simple `Logger` class is also generated. You can now test your mission with the following command lines:
-```bash
-cd ./code_hello_world
-dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
-dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
+```Bash
+> cd ./code_hello_world
+> dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
+> dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
 ```
 You can try to modify the `HelloWorld.java` file under template package to reach the solution like you were the candidate.
 
@@ -151,13 +151,15 @@ It should be written in Markdown, it supports HTML tags and LateX language.
 examples of hints:  
 **hint1.md**
 ```Markdown
-The String that you need to return is the two words that you usually display when you start learning a language for instance.
+The String that you need to return is the two words that you usually
+display when you start learning a language for instance.
 It can be considered as a greeting. (PS: the word is not "It Works")
 ```
 
 **hint2.md**
 ```Markdown
-Alright, the String is case sensitive, so you might want to try multiple cases. Also, we were very emotional when we wrote this challenge, and decided to end the phrase with a "!"
+Alright, the String is case sensitive, so you might want to try multiple cases.
+Also, we were very emotional when we wrote this challenge, and decided to end the phrase with a "!"
 ```
 
 **N.B.:** hint2 will always be given after hint1.
@@ -196,6 +198,3 @@ You can explore different types of challenge:
 * [Multi Service](challenge-types/multi-service.md)
 * [SQL](challenge-types/sql.md)
 
-
-## Getting help
-To get help with Deadlock Challenge, please use the [GitHub mission example issues](https://github.com/deadlock-resources/challenge-examples/issues) or [GitHub mission documentation issues](https://github.com/deadlock-resources/challenge-documentation/issues).

@@ -6,7 +6,7 @@ We are going to explain you different files,
 To be sure to understand the next parts you have to be familiar with:
 
 * [Docker](https://www.docker.com/)
-* Yaml
+* Yaml file
 
 #### Dockerfile
 When your candidate submits his code, a Docker container will be created.
@@ -37,11 +37,11 @@ ENTRYPOINT ["/run.sh"]
 The build step is done only one time when your mission is accepeted by the Deadlock team.
 
 
-#### mission descriptor
+#### Mission descriptor
 Each mission has its own mission descriptor in challengename/challenge.yaml.
 It is used to create the mission container and retrieve your specifications regarding the language and file target.
 
-```
+```bash
 version: 1.0 # You have to increase it if you have changed something in your code
 name: code_halloween_candy # your mission name. MUST be equal to the mission folder
 label: Halloween Candy # your mission label
