@@ -27,6 +27,7 @@ nav:
   - About:
     - Contributing: contributing.md
   - Getting help: help.md
+  - Submit: submit.md
 markdown_extensions:
   - markdown.extensions.admonition:
   - pymdownx.superfences:

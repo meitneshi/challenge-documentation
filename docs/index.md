@@ -194,7 +194,8 @@ to your challenge.
 ## What's next
 You can explore different types of challenge:
 
-* [Hack](challenge-types/hack.md)
+* [Multi language](challenge-types/metamorph.md)
 * [Multi Service](challenge-types/multi-service.md)
+* [Score](challenge-types/score.md)
 * [SQL](challenge-types/sql.md)
 
