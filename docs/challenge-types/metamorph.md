@@ -253,15 +253,15 @@ You can choose amoung these interpreters:
 That's not all, you can also call your own program to generate the input:  
 ```Rust
 {
-    input: call("javascript", "generate.js")
-    expected: call("java", "Solution.java")
+    input: call("javascript", "generate.js"),
+    expected: call("python", "solution.py")
 }
 ```
 You can also open a file: 
 ```Rust
 {
-    input: open("file.txt")
-    expected: call("java", "Solution.java")
+    input: open("file.txt"),
+    expected: call("python", "solution.py")
 }
 ```
 It will be given as a *String* to the user.
@@ -287,7 +287,7 @@ coding:
 The `success/` directory contains your solution given to the user when it succeeded the challenge.  
 You can provid the implementation you wish.  
 
-To test your program you can use [our cli](https://pypi.org/project/deadlock-cli/):  
+To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli/):  
 ```Bash
 > dcli run . java # Will run template/java/Main.java
 > dcli solve . java # Will execute tests on template/java/Main.java
