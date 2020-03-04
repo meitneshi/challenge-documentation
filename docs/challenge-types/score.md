@@ -1,6 +1,6 @@
-## Score challenge
+# Score challenge
 
-When you are creating a code mission, the user has two ways to execute the code ([see more information on main page](/)):  
+When you are creating a code mission, the user has two ways to execute the code ([see more information on main page](/challenge-documentation)):  
 
 * Run -> will only run the code without any test
 * Submit -> will run the code with tests you have wrote.
@@ -9,12 +9,18 @@ When you are creating a code mission, the user has two ways to execute the code 
 You are able to return a *score* when you test the user code.
 For instance if you consider 50 out of 100 tests succeeded you must write it that way (depends of the language):
 
-```java
-> Java
-Mission.INSTANCE.done(50);
+```Java tab=
+public static void main(String[] args) {
+    // test user code
+    Mission.INSTANCE.done(50);
+}
 
-> Python
-Mission.done(50)
+```
+
+```Python tab=
+def main():
+    # test user code
+    Mission.done(50):
 ```
 
 You also have to specify within the `challenge.yaml` different fields:

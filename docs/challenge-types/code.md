@@ -1,3 +1,5 @@
+# Code examples
+
 Here are some examples for different languages:  
 
 * [C example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_c)

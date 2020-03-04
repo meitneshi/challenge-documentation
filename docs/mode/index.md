@@ -20,6 +20,6 @@ sandboxed: true
 By default there are some words the user cannot use into his code. You can find example into `resources/default/blacklist`.
 You can also create your own blacklist for your mission by creating a blacklist file next to the challenge.yaml, then fill it as a csv file. It also supports regex expressions.
 Example of blacklist file:  
-```
+```bash
 [^<>](<|>)[^><],(System\.exit\()(\d)*(\)),(Runtime\.getRuntime\(\)\.exit\(\d*\))
 ```
