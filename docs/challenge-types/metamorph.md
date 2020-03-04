@@ -141,7 +141,6 @@ int main(int argc, char **argv)
 {
     if (argc > 1) {
         // args given, code submitted
-        printf(matching_brackets(argv[1]) ? "true" : "false");
         printf(fibonacci(stol(argv[1])))
     } else {
         // no given, code ran
@@ -178,7 +177,7 @@ class Main
       else puts "Hello World!" # no args given, code runner
     end
   end
-  def matching_brackets (n)
+  def fibonacci (n)
     0
   end
 end
