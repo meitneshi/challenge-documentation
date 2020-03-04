@@ -873,14 +873,14 @@ You can choose amoung these interpreters:  </p>
 </table>
 <p>That's not all, you can also call your own program to generate the input:<br />
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">input</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;javascript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;generate.js&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Solution.java&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">input</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;javascript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;generate.js&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;solution.py&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 You can also open a file: 
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">input</span>: <span class="nc">open</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Solution.java&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">input</span>: <span class="nc">open</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;solution.py&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 It will be given as a <em>String</em> to the user.</p>
@@ -902,7 +902,7 @@ It will be given as a <em>String</em> to the user.</p>
 </code></pre></div></p>
 <p>The <code>success/</code> directory contains your solution given to the user when it succeeded the challenge.<br />
 You can provid the implementation you wish.  </p>
-<p>To test your program you can use <a href="https://pypi.org/project/deadlock-cli/">our cli</a>:<br />
+<p>To test your program you can use <a href="https://pypi.org/project/deadlock-cli/">our CLI</a>:<br />
 <div class="highlight"><pre><span></span><code>&gt; dcli run . java <span class="c1"># Will run template/java/Main.java</span>
 &gt; dcli solve . java <span class="c1"># Will execute tests on template/java/Main.java</span>
 &gt; dcli run . python <span class="c1"># Will run template/python/Main.py</span>
