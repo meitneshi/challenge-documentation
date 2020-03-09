@@ -23,7 +23,7 @@ Let's write the first one !
 ```rust linenums="1"
 challenge! {{
     "languages": ["java", "python", "c", "cpp", "go", "ruby", "rust", "javascript"],
-    tests: [
+    "tests": [
         {
             input: 0,
             expected: 1
@@ -191,7 +191,7 @@ Keep going with more tests:
 ```rust linenums="1"
 challenge! {{
     "languages": ["java", "python", "c", "cpp", "go", "ruby", "rust", "javascript"],
-    tests: [
+    "tests": [
         {
             input: 0,
             expected: 1
