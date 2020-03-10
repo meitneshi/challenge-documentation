@@ -229,7 +229,7 @@ randft(n, m): random from n included to m excluded.
 }
 ```
 Which give us a problem, what to write for the expected value ?  
-No worries! you can call your own solution instead of writing something static!
+No worries! You can call your own solution instead of writing something static!
 ```Rust
 {
     input: randft(20, 30),
@@ -241,7 +241,7 @@ No worries! you can call your own solution instead of writing something static!
 }
 ```
 It will be the same logic, your `solution.py` will be called by our Python interpreter with the *input* value
-and you have to write the solution the stdout. Then it will be compared with the user program.  
+and you have to write the solution the *stdout*. Then it will be compared with the user program.  
 You can choose amoung these interpreters:  
 
 |           |              |      |      |
@@ -249,6 +249,19 @@ You can choose amoung these interpreters:
 | java      | javascript   | ruby | c    |
 | rust      | python       | go   | cpp  |
 
+
+#### Repeat
+But what if you wish to execute 50 times a random test?
+That's not a problem, add the **repeat** parameter to your test:
+```Rust
+{
+    input: randt(20),
+    expected: call("python", "solution.py"),
+    repeat: 50
+}
+```
+
+#### Input call
 That's not all, you can also call your own program to generate the input:  
 ```Rust
 {
@@ -256,6 +269,8 @@ That's not all, you can also call your own program to generate the input:
     expected: call("python", "solution.py")
 }
 ```
+
+#### Open a file
 You can also open a file: 
 ```Rust
 {
@@ -284,7 +299,7 @@ coding:
 ```
 
 The `success/` directory contains your solution given to the user when it succeeded the challenge.  
-You can provid the implementation you wish.  
+You can provide the implementation you wish.  
 
 To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli/):  
 ```Bash
@@ -293,6 +308,8 @@ To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli
 > dcli run . python # Will run template/python/Main.py
 ```
 
+Each file placed within a template is provided if the user decide to change the current language.
+For instance if the user decide to use *Rust* interpreter, all files under `template/rust` will be provided.
 
 What's your challenge must like:
 ```
