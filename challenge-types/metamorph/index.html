@@ -277,9 +277,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Multi language
+      </label>
+    
     <a href="./" title="Multi language" class="md-nav__link md-nav__link--active">
       Multi language
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repeat" class="md-nav__link">
+    Repeat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-call" class="md-nav__link">
+    Input call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-a-file" class="md-nav__link">
+    Open a file
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -437,6 +480,36 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repeat" class="md-nav__link">
+    Repeat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-call" class="md-nav__link">
+    Input call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-a-file" class="md-nav__link">
+    Open a file
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -832,7 +905,7 @@ You can add more complex tests using <code>random</code> method available by our
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 Which give us a problem, what to write for the expected value ?<br />
-No worries! you can call your own solution instead of writing something static!
+No worries! You can call your own solution instead of writing something static!
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">input</span>: <span class="nc">randft</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Solution.java&quot;</span><span class="p">)</span><span class="w"></span>
@@ -843,7 +916,7 @@ No worries! you can call your own solution instead of writing something static!
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 It will be the same logic, your <code>solution.py</code> will be called by our Python interpreter with the <em>input</em> value
-and you have to write the solution the stdout. Then it will be compared with the user program.<br />
+and you have to write the solution the <em>stdout</em>. Then it will be compared with the user program.<br />
 You can choose amoung these interpreters:  </p>
 <table>
 <thead>
@@ -869,13 +942,24 @@ You can choose amoung these interpreters:  </p>
 </tr>
 </tbody>
 </table>
+<h4 id="repeat">Repeat</h4>
+<p>But what if you wish to execute 50 times a random test?
+That's not a problem, add the <strong>repeat</strong> parameter to your test:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">input</span>: <span class="nc">randt</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;solution.py&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">repeat</span>: <span class="mi">50</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h4 id="input-call">Input call</h4>
 <p>That's not all, you can also call your own program to generate the input:<br />
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">input</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;javascript&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;generate.js&quot;</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;solution.py&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-You can also open a file: 
+</code></pre></div></p>
+<h4 id="open-a-file">Open a file</h4>
+<p>You can also open a file: 
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">input</span>: <span class="nc">open</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">expected</span>: <span class="nc">call</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;solution.py&quot;</span><span class="p">)</span><span class="w"></span>
@@ -899,12 +983,14 @@ It will be given as a <em>String</em> to the user.</p>
   <span class="nt">editorMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rust</span>
 </code></pre></div></p>
 <p>The <code>success/</code> directory contains your solution given to the user when it succeeded the challenge.<br />
-You can provid the implementation you wish.  </p>
+You can provide the implementation you wish.  </p>
 <p>To test your program you can use <a href="https://pypi.org/project/deadlock-cli/">our CLI</a>:<br />
 <div class="highlight"><pre><span></span><code>&gt; dcli run . java <span class="c1"># Will run template/java/Main.java</span>
 &gt; dcli solve . java <span class="c1"># Will execute tests on template/java/Main.java</span>
 &gt; dcli run . python <span class="c1"># Will run template/python/Main.py</span>
 </code></pre></div></p>
+<p>Each file placed within a template is provided if the user decide to change the current language.
+For instance if the user decide to use <em>Rust</em> interpreter, all files under <code>template/rust</code> will be provided.</p>
 <p>What's your challenge must like:
 <div class="highlight"><pre><span></span><code>.
 ├── challenge.yaml
