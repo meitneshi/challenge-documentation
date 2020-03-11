@@ -241,7 +241,20 @@ No worries! You can call your own solution instead of writing something static!
 }
 ```
 It will be the same logic, your `solution.py` will be called by our Python interpreter with the *input* value
-and you have to write the solution the *stdout*. Then it will be compared with the user program.  
+and you have to write the solution result to the *stdout*.  
+For instance with Fibonacci:  
+```Python
+# solution.py
+def fibo(n):
+    if n <= 1:
+       return n
+    else:
+       return(fibo(n - 1) + fibo(n - 2))
+
+print(fibo(sys.argv[1]))
+```
+
+Then the *stdout* given with *print* will be compared with the user program.  
 You can choose amoung these interpreters:  
 
 |           |              |      |      |
