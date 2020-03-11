@@ -211,7 +211,7 @@ challenge! {{
         {
             input: 10,
             expected: 89
-        },
+        }
     ]
 }}
 ```
