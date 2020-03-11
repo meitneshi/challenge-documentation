@@ -916,7 +916,18 @@ No worries! You can call your own solution instead of writing something static!
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 It will be the same logic, your <code>solution.py</code> will be called by our Python interpreter with the <em>input</em> value
-and you have to write the solution the <em>stdout</em>. Then it will be compared with the user program.<br />
+and you have to write the solution result to the <em>stdout</em>.<br />
+For instance with Fibonacci:<br />
+<div class="highlight"><pre><span></span><code><span class="c1"># solution.py</span>
+<span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span><span class="p">(</span><span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibo</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div></p>
+<p>Then the <em>stdout</em> given with <em>print</em> will be compared with the user program.<br />
 You can choose amoung these interpreters:  </p>
 <table>
 <thead>
