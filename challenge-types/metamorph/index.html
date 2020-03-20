@@ -773,7 +773,30 @@ By default for each template the user will have a template, you can custom each 
 </code></pre></div>
 </td></tr></table></div>
 <input name="__tabs_1" type="radio" id="__tab_1_6" />
-<label for="__tab_1_6">Rust</label>
+<label for="__tab_1_6">Ocaml</label>
+<div class="superfences-content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">let</span> <span class="n">fibonacci</span> <span class="n">n</span> <span class="o">=</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">fib_2termes</span> <span class="n">n</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span>
+    <span class="k">match</span> <span class="n">n</span> <span class="k">with</span>
+    <span class="o">|</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="n">a</span>
+    <span class="o">|</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">b</span>
+    <span class="o">|</span> <span class="o">_</span> <span class="o">-&gt;</span> <span class="n">fib_2termes</span> <span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="n">b</span> <span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+  <span class="k">in</span> <span class="n">fib_2termes</span> <span class="n">n</span> <span class="mi">0</span> <span class="mi">1</span> <span class="o">;;</span>
+
+<span class="k">if</span> <span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="nn">Sys</span><span class="p">.</span><span class="n">argv</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="k">then</span> <span class="n">print_int</span> <span class="o">(</span><span class="n">fibonacci</span>  <span class="o">(</span><span class="n">int_of_string</span> <span class="nn">Sys</span><span class="p">.</span><span class="n">argv</span><span class="o">.(</span><span class="mi">1</span><span class="o">)));;</span>
+</code></pre></div>
+</td></tr></table></div>
+<input name="__tabs_1" type="radio" id="__tab_1_7" />
+<label for="__tab_1_7">Rust</label>
 <div class="superfences-content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -809,8 +832,8 @@ By default for each template the user will have a template, you can custom each 
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table></div>
-<input name="__tabs_1" type="radio" id="__tab_1_7" />
-<label for="__tab_1_7">Ruby</label>
+<input name="__tabs_1" type="radio" id="__tab_1_8" />
+<label for="__tab_1_8">Ruby</label>
 <div class="superfences-content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
