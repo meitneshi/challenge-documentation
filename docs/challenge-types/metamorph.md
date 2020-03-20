@@ -149,6 +149,19 @@ int main(int argc, char **argv)
 }
 ```
 
+```Ocaml linenums="1" tab=
+let fibonacci n =
+  let rec fib_2termes n a b =
+    match n with
+    | 0 -> a
+    | 1 -> b
+    | _ -> fib_2termes (n - 1) b (a + b)
+  in fib_2termes n 0 1 ;;
+
+if Array.length Sys.argv > 1 = true
+    then print_int (fibonacci  (int_of_string Sys.argv.(1)));;
+```
+
 ```Rust linenums="1" tab=
 use std::env;
 
