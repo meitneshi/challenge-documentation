@@ -642,14 +642,14 @@ So it's pretty easy to start any challenge, you will just have to care what you 
 <h3 id="install-dcli">Install DCLI</h3>
 <p>Requirements:</p>
 <ul>
-<li>Docker</li>
+<li>Docker (<a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">as non-root user</a>)</li>
 <li>Python &gt;= 3.2</li>
 <li>pip installed (<a href="https://pip.pypa.io/en/stable/installing/">with python</a> or from your package manager)</li>
 </ul>
 <p>Install <a href="https://pypi.org/project/deadlock-cli/">dcli</a> package using pip:<br />
 <code>pip3 install deadlock-cli</code>  </p>
 <p>Then you shoud have <code>dcli</code> command on your system. Run <code>dcli --help</code> to check that everything worked well.<br />
-<em>If you have something like <code>module not found</code> when you run <code>dcli</code> try to export <code>/home/user/.local/bin/</code> to your $PATH.</em>
+<em>If you have something like <code>command not found</code> or <code>module not found</code> when you run <code>dcli</code> try to export <code>/home/user/.local/bin/</code> to your $PATH.</em>
 <div class="highlight"><pre><span></span><code>&gt; dcli --help
 <span class="c1"># man page should be printed</span>
 &gt; dcli version
@@ -657,7 +657,11 @@ current is <span class="m">0</span>.0.96
 </code></pre></div></p>
 <h3 id="create-your-first-code-challenge">Create your first code challenge</h3>
 <p>Let's create a Java mission to explain you the concept behind the structure.
-<div class="highlight"><pre><span></span><code>&gt; dcli gen java
+Java is just for the example, once you understand the architecture you will be 
+able to create a challenge in any language. Furthermore <code>dcli</code> is able to generate 
+other languages, we also have <a href="https://github.com/deadlock-resources/challenge-examples">different examples</a>.</p>
+<p>Let's start with a Java example:  </p>
+<p><div class="highlight"><pre><span></span><code>&gt; dcli gen java
 </code></pre></div>
 We will generate a simple mission where the user must return <code>Hello World!</code>.</p>
 <p><img alt="DCLI gen java" src="img/dcli-gen-java.gif" /></p>
