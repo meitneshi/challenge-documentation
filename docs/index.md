@@ -32,7 +32,7 @@ So it's pretty easy to start any challenge, you will just have to care what you 
 ### Install DCLI
 Requirements:
 
-* Docker
+* Docker ([as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user))
 * Python >= 3.2
 * pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
 
@@ -41,7 +41,7 @@ Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:
 
 
 Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.  
-*If you have something like `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
+*If you have something like `command not found` or `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
 ```bash
 > dcli --help
 # man page should be printed
@@ -51,6 +51,12 @@ current is 0.0.96
 
 ### Create your first code challenge
 Let's create a Java mission to explain you the concept behind the structure.
+Java is just for the example, once you understand the architecture you will be 
+able to create a challenge in any language. Furthermore `dcli` is able to generate 
+other languages, we also have [different examples](https://github.com/deadlock-resources/challenge-examples).
+
+Let's start with a Java example:  
+
 ```bash
 > dcli gen java
 ```
