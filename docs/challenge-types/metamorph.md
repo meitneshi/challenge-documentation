@@ -34,7 +34,7 @@ challenge! {{
 
 It will call the user program with the `0` as *input* and is waiting to have `1` as
 ouput.  
-By default for each template the user will have a template, you can custom each one for each language:
+By default for each language the user will have a template, you can custom each one for each language:
 
 ```Java linenums="1" tab=
 public class Main {
