@@ -3,6 +3,17 @@
 When you are creating a challenge, you can create one independent of the programming language.  
 It gives the ability for the final user to select it's own programming language!  
 
+Available languages :
+* Java 11.0.5 (openjdk)
+* Kotlin 1.3.70-eap-184
+* Python 3.8.2
+* C/C++ 9.2.0
+* Rust 1.39.0
+* Go 1.12.16
+* Javascript with NodeJS 12.15.0
+* Ruby 2.6.6
+* Ocaml 4.08.1
+
 
 Let's say you want write a Fibonacci challenge.  
 Create a new directory and create a `entry.rs` file, it will define:
