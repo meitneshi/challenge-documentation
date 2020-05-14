@@ -78,3 +78,5 @@ The success/query.sql will modifies the database (like the expected answer) and 
 │   └── query.sql
 └── thumbnail.png
 ```
+### Example
+https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql
