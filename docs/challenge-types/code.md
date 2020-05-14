@@ -8,3 +8,4 @@ Here are some examples for different languages:
 * [Ocaml example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_ocaml)
 * [Python example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_python)
 * [Score Python example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python)
+* [SQL example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql)
