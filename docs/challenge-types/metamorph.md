@@ -17,7 +17,7 @@ Available languages :
 
 Let's say you want write a Fibonacci challenge.  
 Create a new directory and create a `entry.rs` file, it will define:
-- which language is avalaible for the user,
+- which language is available for the user,
 - all your tests to validate user code.  
 
 ```rust linenums="1"
