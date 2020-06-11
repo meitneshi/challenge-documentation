@@ -36,7 +36,7 @@
     
     
       
-        <title>Examples - Deadlock Missions Docs</title>
+        <title>Java Maven - Deadlock Missions Docs</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#code-examples" tabindex="0" class="md-skip">
+      <a href="#java-maven" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Examples
+                Java Maven
               
             </span>
           
@@ -316,20 +316,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Examples" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../code/" title="Examples" class="md-nav__link">
       Examples
     </a>
-    
   </li>
 
     
@@ -434,6 +425,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challengeyml-file" class="md-nav__link">
+    Challenge.yml file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-and-success-directories" class="md-nav__link">
+    Template and Success directories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree-example-of-java-maven-challenge" class="md-nav__link">
+    Tree example of Java Maven challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -445,18 +473,70 @@
               
                 
                 
-                <h1 id="code-examples">Code examples</h1>
-<p>Here are some examples for different languages:  </p>
-<ul>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_c">C example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_cpp">Cpp example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java">Java example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java_maven">Java Maven example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_ocaml">Ocaml example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_python">Python example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python">Score Python example</a></li>
-<li><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql">SQL example</a></li>
-</ul>
+                <h1 id="java-maven">Java Maven</h1>
+<p>When creating a Java Maven mission, you need to download all the project's dependencies in a build.sh with Maven.
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="c1"># Script runned before building Docker image</span>
+
+<span class="c1"># Download all dependencies of the project to put them into the Docker image via Dockerfile</span>
+<span class="c1"># Here we have defined our dependencies into a jar directory</span>
+mvn -B dependency:copy-dependencies -DoutputDirectory<span class="o">=</span>jar
+</code></pre></div></p>
+<p>Then the dependencies need to be put in a Dockerfile 
+<div class="highlight"><pre><span></span><code><span class="c"># Add all dependency jars</span>
+<span class="k">ADD</span> jar src/main/java/jar
+</code></pre></div></p>
+<h3 id="challengeyml-file">Challenge.yml file</h3>
+<p>you have to complete the <code>challenge.yaml</code> file:
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_calculator</span>
+<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calculator challenge</span>
+<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Implement calculator operations</span>
+<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CODING</span>
+<span class="nt">xp</span><span class="p">:</span>
+  <span class="nt">java</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">coding</span><span class="p">:</span>
+  <span class="nt">templateDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/main/java/template</span>
+  <span class="nt">successDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/main/java/success</span>
+  <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calculator.java</span>
+  <span class="nt">editorMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">java</span>
+</code></pre></div></p>
+<h3 id="template-and-success-directories">Template and Success directories</h3>
+<p>The 'template/' directory contains the code that will be written by the user trying to solve the challenge.</p>
+<p>The <code>success/</code> directory contains your solution given to the user when it succeeded the challenge.<br />
+You can provide the implementation you wish.  </p>
+<p>To test your program you can use <a href="https://pypi.org/project/deadlock-cli/">our CLI</a>:<br />
+<div class="highlight"><pre><span></span><code>&gt; dcli run . <span class="c1"># Will run template/</span>
+&gt; dcli solve . <span class="c1"># Will execute tests on template/</span>
+</code></pre></div></p>
+<h3 id="tree-example-of-java-maven-challenge">Tree example of Java Maven challenge</h3>
+<div class="highlight"><pre><span></span><code>├── challenge.yaml
+├── docs
+│   ├── ...
+├── jar
+├── build.sh
+├── Dockerfile
+├── run.sh
+├── pom.xml
+├── src
+│   ├── main
+│       └── java
+│           ├── app
+│           │   ├── Logger.java
+│           │   ├── Run.java
+│           │   ├── Solve.java
+│           └── success
+│               └── Calculator.java
+│               └── CalculatorTest.java
+│           └── template
+│               └── Calculator.java
+│               └── CalculatorTest.java
+</code></pre></div>
+
+<h3 id="example">Example</h3>
+<p><a href="https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java_maven">code_java_maven</a></p>
                 
                   
                 
@@ -474,41 +554,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../sql/" title="SQL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                SQL
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../mode/" title="Mode" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Mode
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

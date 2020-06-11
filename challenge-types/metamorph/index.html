@@ -525,9 +525,19 @@
                 <h1 id="multi-language">Multi language</h1>
 <p>When you are creating a challenge, you can create one independent of the programming language.<br />
 It gives the ability for the final user to select it's own programming language!  </p>
+<p>Available languages :
+* Java 11.0.5 (openjdk)
+* Kotlin 1.3.70-eap-184
+* Python 3.8.2
+* C/C++ 9.2.0
+* Rust 1.39.0
+* Go 1.12.16
+* Javascript with NodeJS 12.15.0
+* Ruby 2.6.6
+* Ocaml 4.08.1</p>
 <p>Let's say you want write a Fibonacci challenge.<br />
 Create a new directory and create a <code>entry.rs</code> file, it will define:
-- which language is avalaible for the user,
+- which language is available for the user,
 - all your tests to validate user code.  </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -562,7 +572,7 @@ Let's write the first one !</p>
 
 <p>It will call the user program with the <code>0</code> as <em>input</em> and is waiting to have <code>1</code> as
 ouput.<br />
-By default for each template the user will have a template, you can custom each one for each language:</p>
+By default for each language the user will have a template, you can custom each one for each language:</p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Java</label>
