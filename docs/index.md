@@ -46,7 +46,7 @@ Then you shoud have `dcli` command on your system. Run `dcli --help` to check th
 > dcli --help
 # man page should be printed
 > dcli version
-current is 0.0.96
+current is 1.2.0
 ```
 
 ### Create your first code challenge
