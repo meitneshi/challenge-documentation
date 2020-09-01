@@ -32,6 +32,15 @@ You also have to specify within the `challenge.yaml` different fields:
 ```
 
 At the end on the interface your users will get a new tab next to the **Console**.
+<!--
+    Pay attention about resources paths :
+    mkdocs generates from each markdown file a folder with the same name and its related index file
+    So, <path>/my-page.md will create <path>/my-page/index 
+
+    example:
+    example-score.png in 'https://deadlock-resources.github.io/challenge-documentation/challenge-types/score/'
+    points to the path 'https://deadlock-resources.github.io/challenge-documentation/img/example-score.png'
+-->
 ![Example score Python](../../img/example-score.png)
 
 ### Example

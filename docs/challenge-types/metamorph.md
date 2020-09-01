@@ -3,7 +3,8 @@
 When you are creating a challenge, you can create one independent of the programming language.  
 It gives the ability for the final user to select it's own programming language!  
 
-Available languages :
+Available languages:
+
 * Java 11.0.5 (openjdk)
 * Kotlin 1.3.70-eap-184
 * Python 3.8.2
@@ -376,4 +377,5 @@ What's your challenge must like:
         └── Main.rs
 ```
 
-
+## Use dependencies
+Please read the [Dependencies usage](metamorph-using-dependencies.md) documentation to take advantage of new possibilities.
