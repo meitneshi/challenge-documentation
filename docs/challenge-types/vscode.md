@@ -5,7 +5,7 @@ Do you want to let your student enjoys a full editor ?
 
 Let's do it with Deadlock in the browser!
 
-![Demo Vscode gif](img/demo-vscode.gif)
+![Demo Vscode gif](/challenge-documentation/img/demo-vscode.gif)
 
 
 ## How ?
