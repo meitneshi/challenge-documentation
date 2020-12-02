@@ -17,6 +17,7 @@ theme:
 nav:
   - Home: index.md
   - Types of challenge:
+     - VsCode: challenge-types/vscode.md
      - Multi language: challenge-types/metamorph.md
      - Multi service: challenge-types/multi-service.md
      - Score: challenge-types/score.md
