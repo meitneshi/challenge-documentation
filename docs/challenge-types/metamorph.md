@@ -4,6 +4,7 @@ When you are creating a challenge, you can create one independent of the program
 It gives the ability for the final user to select it's own programming language!  
 
 Available languages :
+
 * Java 11.0.5 (openjdk)
 * Kotlin 1.3.70-eap-184
 * Python 3.8.2
