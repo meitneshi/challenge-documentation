@@ -200,6 +200,7 @@ to your challenge.
 ## What's next
 You can explore different types of challenge:
 
+* [VsCode](challenge-types/vscode.md)
 * [Multi language](challenge-types/metamorph.md)
 * [Multi Service](challenge-types/multi-service.md)
 * [Score](challenge-types/score.md)
