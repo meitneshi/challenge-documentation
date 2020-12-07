@@ -37,6 +37,9 @@ You have to create the following files:
 ```Dockerfile
 FROM registry.e-biz.fr/deadlock-public/deadlock-theia:latest
 
+# You are free to install anything you want
+# The package manager is *apt*
+
 # destination paths are unchangeable
 COPY base /project # copy user directory to /project
 COPY docs /home/theia/docs # copy instructions
