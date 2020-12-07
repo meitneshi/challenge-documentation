@@ -14,13 +14,16 @@ You have to create the following files:
 
 ```S
 ├── base
-│   └── src
-│       └── main
-│           └── java
-│               └── io
-│                   └── deadlock
-│                       └── sort
-│                           └── Main.java
+│   ├── src   
+│   │   ├── main   
+│   │   │   ├── java                  
+│   │   │   │   └── io
+│   │   │   │       └── deadlock
+│   │   │   │           └── demo
+│   │   │   │               └── CdbApplication.java
+│   │   │   └── resources/
+│   │   └── test/
+│   └── webapp/
 ├── challenge.yaml
 ├── Dockerfile
 ├── docs
@@ -28,25 +31,26 @@ You have to create the following files:
 └── thumbnail.png
 ```
 
-* **base** directory containing user files 
-* **docs** contains the briefing, user instructions 
+* **base** directory containing user files, those files will be delivered to the user when the IDE starts.
+* **docs** contains the briefing, user instructions, the briefing will be opened when the IDE starts. 
 * **Dockerfile**
 ```Dockerfile
 FROM registry.e-biz.fr/deadlock-public/deadlock-theia:latest
 
+# destination paths are unchangeable
 COPY base /project # copy user directory to /project
-COPY docs /home/theia/docs # copy documentation 
+COPY docs /home/theia/docs # copy instructions
 ```
 * **challenge.yaml** is the descriptor file
 ```Yaml
 version: 0.1
-name: code_persist_fibo
-label: Fibonacci
-description: Implement Fibonacci algorithm
-level: ewok # difficulty of the challenge
+name: code_persist_crud
+label: Crud
+description: This is your moment, you have to create your own CRUD. Your customer requested you to build a Computer DataBase application (codename *CDB*).
+level: ewok # difficulty of the challenge [how it works](https://deadlock-resources.github.io/challenge-documentation/#level)
 type: PERSISTENT # mandatory
 xp: # xp tags, you are free to write your own
-  programming: 1
+  programming: 1 # this is a weight, not a number
   java: 1
 coding:
   userDirectory: base
@@ -58,14 +62,14 @@ resources: # Resources given for the container, don't touch it if you are not co
 persistent:
   ports: # ports you want to let open for the user
     web: 3000 # mandatory
-    test: 9090
+    crud: 9090
 ```
 * thumbnail.png image challenge 
 
 
 ## How to test ?
 ```Bash
-> cd ./code_persist_fibo
+> cd ./code_persist_crud
 > dcli run .
 ```
 Then it will give you an address you can click on it or copy paste in your browser.
