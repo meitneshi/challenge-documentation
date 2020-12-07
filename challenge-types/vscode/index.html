@@ -550,6 +550,9 @@ Do you want to let your student enjoys a full editor ?</p>
 <li><strong>Dockerfile</strong>
 <div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">registry.e-biz.fr/deadlock-public/deadlock-theia:latest</span>
 
+<span class="c"># You are free to install anything you want</span>
+<span class="c"># The package manager is *apt*</span>
+
 <span class="c"># destination paths are unchangeable</span>
 <span class="k">COPY</span> base /project # copy user directory to /project
 <span class="k">COPY</span> docs /home/theia/docs # copy instructions
