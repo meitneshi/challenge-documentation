@@ -528,13 +528,16 @@ Do you want to let your student enjoys a full editor ?</p>
 <h2 id="how">How ?</h2>
 <p>You have to create the following files:</p>
 <div class="highlight"><pre><span></span><code>├── <span class="n">base</span>
-│   └── <span class="n">src</span>
-│       └── <span class="n">main</span>
-│           └── <span class="n">java</span>
-│               └── <span class="n">io</span>
-│                   └── <span class="n">deadlock</span>
-│                       └── <span class="n">sort</span>
-│                           └── <span class="n">Main.java</span>
+│   ├── <span class="n">src</span>   
+│   │   ├── <span class="n">main</span>   
+│   │   │   ├── <span class="n">java</span>                  
+│   │   │   │   └── <span class="n">io</span>
+│   │   │   │       └── <span class="n">deadlock</span>
+│   │   │   │           └── <span class="n">demo</span>
+│   │   │   │               └── <span class="n">CdbApplication.java</span>
+│   │   │   └── <span class="n">resources</span><span class="o">/</span>
+│   │   └── <span class="n">test</span><span class="o">/</span>
+│   └── <span class="n">webapp</span><span class="o">/</span>
 ├── <span class="n">challenge.yaml</span>
 ├── <span class="n">Dockerfile</span>
 ├── <span class="n">docs</span>
@@ -542,23 +545,24 @@ Do you want to let your student enjoys a full editor ?</p>
 └── <span class="n">thumbnail.png</span>
 </code></pre></div>
 <ul>
-<li><strong>base</strong> directory containing user files </li>
-<li><strong>docs</strong> contains the briefing, user instructions </li>
+<li><strong>base</strong> directory containing user files, those files will be delivered to the user when the IDE starts.</li>
+<li><strong>docs</strong> contains the briefing, user instructions, the briefing will be opened when the IDE starts. </li>
 <li><strong>Dockerfile</strong>
 <div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">registry.e-biz.fr/deadlock-public/deadlock-theia:latest</span>
 
+<span class="c"># destination paths are unchangeable</span>
 <span class="k">COPY</span> base /project # copy user directory to /project
-<span class="k">COPY</span> docs /home/theia/docs # copy documentation 
+<span class="k">COPY</span> docs /home/theia/docs # copy instructions
 </code></pre></div></li>
 <li><strong>challenge.yaml</strong> is the descriptor file
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_persist_fibo</span>
-<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Fibonacci</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Implement Fibonacci algorithm</span>
-<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span> <span class="c1"># difficulty of the challenge</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_persist_crud</span>
+<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Crud</span>
+<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">This is your moment, you have to create your own CRUD. Your customer requested you to build a Computer DataBase application (codename *CDB*).</span>
+<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span> <span class="c1"># difficulty of the challenge [how it works](https://deadlock-resources.github.io/challenge-documentation/#level)</span>
 <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PERSISTENT</span> <span class="c1"># mandatory</span>
 <span class="nt">xp</span><span class="p">:</span> <span class="c1"># xp tags, you are free to write your own</span>
-  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span> <span class="c1"># this is a weight, not a number</span>
   <span class="nt">java</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="nt">coding</span><span class="p">:</span>
   <span class="nt">userDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">base</span>
@@ -570,12 +574,12 @@ Do you want to let your student enjoys a full editor ?</p>
 <span class="nt">persistent</span><span class="p">:</span>
   <span class="nt">ports</span><span class="p">:</span> <span class="c1"># ports you want to let open for the user</span>
     <span class="nt">web</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span> <span class="c1"># mandatory</span>
-    <span class="nt">test</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span>
+    <span class="nt">crud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span>
 </code></pre></div></li>
 <li>thumbnail.png image challenge </li>
 </ul>
 <h2 id="how-to-test">How to test ?</h2>
-<p><div class="highlight"><pre><span></span><code>&gt; <span class="nb">cd</span> ./code_persist_fibo
+<p><div class="highlight"><pre><span></span><code>&gt; <span class="nb">cd</span> ./code_persist_crud
 &gt; dcli run .
 </code></pre></div>
 Then it will give you an address you can click on it or copy paste in your browser.</p>
