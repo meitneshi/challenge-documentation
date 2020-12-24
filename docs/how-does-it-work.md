@@ -1,29 +1,33 @@
 # How does it work ?
-If you are here, you already read the [Getting Started](/#getting-started) and you want to explore more about how a mission works.
-We are going to explain you different files, 
 
+If you are here, you may have already read the [Getting Started](/#getting-started) docs.
+If not, I advice you to read it before going further through this documentation.
 
-To be sure to understand the next parts you have to be familiar with:
+So you are still here, which means you want to know more about how a mission works.
 
+To be sure you understand easily the next sections, you have to be familiar with these two following concepts:
 * [Docker](https://www.docker.com/)
 * Yaml file
 
 #### Dockerfile
-When your candidate submits his code, a Docker container will be created.
-The name of the Docker image will be your mission name, prefixed with **code_**.  
-**Important:** your container should have its own CMD or ENTRYPOINT defined.
-Before your container is executed, your candidate code will be pasted within **template** folder.
-**Where** and **what** this file is entirely up to you and shall be submitted in the [descriptor](#challenge-descriptor).
 
-Once the code is inside the container, your container will be ran until completion.
-Note that the STDOUT and STDERR signals will be streamed to the candidate.
-Once it completes, the exit code will be checked.
+When your candidate submits his/her code, a Docker container will be created.
+The Docker image name will be your mission name, prefixed with **code_**.  
+*example* : A container from the image "code_caesar_decipher" will be created for a mission called "caesae_decipher".  
 
+**Important:** Your container should have its own CMD or ENTRYPOINT defined.  
+
+Before your container is executed, your candidate code will be pasted within **template** folder.  
+Once the code is inside the container, your container will be run until completion.
+Note that the STDOUT and STDERR signals will be streamed to the candidate.  
+
+When the code exeuction finished, the exit code will be checked to know if the candidate code is right or wrong:
 If the **exit code** is **0**, the mission was **completed** successfully.
 **Otherwise**, it means the candidate has **failed**.
 
-You can custom the Dockerfile has you wish, include external library to allow your user to have new experiences !  
-Example of a python mission with **nymphy, sklearn and pandas libraries**:  
+You can custom the Dockerfile to include external libraries to allow your user to have new experiences!  
+
+Example of a python mission with **nymphy, sklearn and pandas** libraries:  
 ```Dockerfile
 FROM python:3.7-slim
 RUN pip install numpy sklearn pandas
@@ -34,15 +38,16 @@ COPY run.sh /
 RUN chmod +x run.sh
 ENTRYPOINT ["/run.sh"]
 ```
-The build step is done only one time when your mission is accepeted by the Deadlock team.
+
+The build step is done only once, when your mission is accepeted by the Deadlock team.
 
 
 #### Mission descriptor
-Each mission has its own mission descriptor in challengename/challenge.yaml.
+Each mission has its own mission descriptor in **challenge-name/challenge.yaml**.
 It is used to create the mission container and retrieve your specifications regarding the language and file target.
 
 ```bash
-version: 1.0 # You have to increase it if you have changed something in your code
+version: 1.0 # You have to increase the version if you have changed something in your code
 name: code_halloween_candy # your mission name. MUST be equal to the mission folder
 label: Halloween Candy # your mission label
 description: Help your brother split his halloween candy # your mission description, in english

@@ -7,14 +7,13 @@
 This documentation is mainly used to help everyone with the creation of their own learning content, through Deadlock platform.
 
 ## What is a mission ?
-A mission is mainly these elements:
+A mission is mainly composed of these elements:
 
-* A documentation: instructions for the user
-* A template folder: code provided to the user
-* A success folder: solution of the challenge
-* An app folder: logic to verify user code
-* The mission descriptor: challenge.yml
-* Many hints: You can add different hints, each one could be unlock with token, user unlock 
+* A "docs" folder: contains the files with the documentation to give the instructions to the candidate who will try to solve the mission. It can contains files with some hints too, to help the user.
+* A "template" folder: code provided to the user
+* A "success" folder: the challenge solution
+* An "app" folder: logic to verify user code (some tests)
+* A "challenge.yml" file: The mission descriptor
 
 You can discover many elements on the user interface:
 
@@ -26,8 +25,9 @@ You can discover many elements on the user interface:
 4. Submit button is used to execute test on user code
 
 ## Getting Started
-Each mission came with a special structure, it will be provided by our [DCLI tool](https://github.com/deadlock-resources/dcli)
-So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.
+Each mission came with a special structure. 
+All the main files will be automatically generated if you use our [DCLI tool](https://github.com/deadlock-resources/dcli).
+So it's pretty easy to start creating any challenge of your choice! 
 
 ### Install DCLI
 Requirements:
@@ -37,11 +37,11 @@ Requirements:
 * pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
 
 Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:  
-`pip3 install deadlock-cli`  
+`pip3 install deadlock-cli`
 
+Once dcli is installed on your computer, you can use the `dcli` command.  
+Run `dcli --help` or `dcli version` to check that everything worked well.  
 
-Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.  
-*If you have something like `command not found` or `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
 ```bash
 > dcli --help
 # man page should be printed
@@ -49,18 +49,25 @@ Then you shoud have `dcli` command on your system. Run `dcli --help` to check th
 current is 1.2.0
 ```
 
-### Create your first code challenge
-Let's create a Java mission to explain you the concept behind the structure.
-Java is just for the example, once you understand the architecture you will be 
-able to create a challenge in any language. Furthermore `dcli` is able to generate 
-other languages, we also have [different examples](https://github.com/deadlock-resources/challenge-examples).
+*If you have something like `command not found` or `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
 
-Let's start with a Java example:  
 
+### Create your first coding mission
+
+Let's create a Java mission as an example to explain you the concept behind the structure.
+It's only an example to explain you how to create a coding mission. Once you have it, you will be able to create missions in every languages you want!
+
+`dcli` is able to generate coding missions in other languages. 
+You can see [different examples](https://github.com/deadlock-resources/challenge-examples).
+
+Let's start!
+
+Running the following command, you will init a Java coding mission:
 ```bash
 > dcli gen java
 ```
-We will generate a simple mission where the user must return `Hello World!`.
+
+In the following example, we will generate a simple mission where the user has to code a function which returns `Hello World!`.
 
 ![DCLI gen java](img/dcli-gen-java.gif)
 
@@ -89,21 +96,33 @@ code_hello_world/
 
 ```
 
-As you saw it, the goal is simple, implement the `sayHello()` method within `template` package.
-All files under `template` package will be served to the user, you can create as much as you want.
-The `HelloWorld.java` file under `success` package will be served only when the user succeed the challenge.
+In this challenge, the goal is simple: the candidate has to implement the `sayHello()` method, in the HelloWorld.java file in the `template` folder.  
+All files under the `template` folder will be served to the user. You can create as many files as you want in this diretory.  
 
-You have to complete all `//TODO` present in the code.  
-Let's start with `src/main/java/success/HelloWorld.java`, this is the solution file.  
+The `HelloWorld.java` file under the `success` folder will be served only when the user succeed the challenge. It contains your solution to the mission.
+So the user will be able to see it once he has succeeded the challenge with his/her one.
+
+You have to complete all `//TODO` in the coding files.  
+Let's start with the `src/main/java/success/HelloWorld.java` file, the solution file we talked about above.  
 ```java
 public static String sayHello() {
     //TODO write your own solution
     return null;
 }
 ```
-Pretty simple the method has to return `"Hello World!"`.  
-Next part is to compare the user result with the expected result, this part is done under `src/main/java/app/Solve.java`.
-Dcli generates some part of code for you but have to complete with your own logic.
+
+The `sayHello()` method has to return the string `"Hello World!"`.  
+So you can write the folowing code in the `success/HelloWorld.java` file : 
+```java
+public static String sayHello() {
+    return "Hello World!";
+}
+```
+
+Once you have written the solution, you have to write a test suite allowing you to automatically test the candidate's solution.
+This is done in the `src/main/java/app/Solve.java` file.
+
+Dcli generates some code lines for you but have to complete with your own tests.
 ``` java
 public static void main(String[] args) {
     try {
