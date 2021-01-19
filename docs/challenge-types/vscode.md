@@ -69,6 +69,13 @@ persistent:
 ```
 * thumbnail.png image challenge 
 
+### Add image to the briefing
+```
+![toast](image:toast.jpg)
+![Something Else](image:dir/else.png)
+```
+You must prefix your image path with *image:*
+
 
 ## How to test ?
 ```Bash
