@@ -83,3 +83,37 @@ You must prefix your image path with *image:*
 > dcli run .
 ```
 Then it will give you an address you can click on it or copy paste in your browser.
+
+## Add services on startup
+
+Let's say you need to start a service when the mission starts.
+For instance a Postgres database.
+
+You simply need to add a `startup.sh` script within your Docker image:  
+`COPY startup.sh /deadlock/startup.sh`
+
+and within your `startup.sh` for instance:  
+```bash
+#!/bin/sh
+
+# Launch postgres service on startup
+service postgresql start
+```
+
+The `startup.sh` script will be run when the Docker container starts.
+
+*If you need to populate your database, it's better to do it within the Dockerfile (it will be faster than using the startup script):*  
+```Dockerfile
+# Postgresql installation
+RUN apt-get -y update
+RUN apt-get -y install postgresql
+
+USER postgres
+
+COPY db/sql /sql
+# populate database
+RUN /etc/init.d/postgresql start &&\
+    psql --command "CREATE USER deadlock WITH SUPERUSER PASSWORD 'no-passwd';" &&\
+    createdb -O deadlock deadlock-db &&\
+    psql -d deadlock-db -U deadlock -f /sql/1__schema.sql -f /sql/2__entries.sql &&\
+```
