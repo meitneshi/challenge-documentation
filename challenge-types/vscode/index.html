@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
     
     
       
@@ -322,6 +322,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-services-on-startup" class="md-nav__link">
+    Add services on startup
+  </a>
+  
+</li>
+      
       
       
       
@@ -529,6 +536,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-services-on-startup" class="md-nav__link">
+    Add services on startup
+  </a>
+  
+</li>
+      
       
       
       
@@ -617,6 +631,32 @@ You must prefix your image path with <em>image:</em></p>
 &gt; dcli run .
 </code></pre></div>
 Then it will give you an address you can click on it or copy paste in your browser.</p>
+<h2 id="add-services-on-startup">Add services on startup</h2>
+<p>Let's say you need to start a service when the mission starts.
+For instance a Postgres database.</p>
+<p>You simply need to add a <code>startup.sh</code> script within your Docker image:<br />
+<code>COPY startup.sh /deadlock/startup.sh</code></p>
+<p>and within your <code>startup.sh</code> for instance:<br />
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># Launch postgres service on startup</span>
+service postgresql start
+</code></pre></div></p>
+<p>The <code>startup.sh</code> script will be run when the Docker container starts.</p>
+<p><em>If you need to populate your database, it's better to do it within the Dockerfile (it will be faster than using the startup script):</em><br />
+<div class="highlight"><pre><span></span><code><span class="c"># Postgresql installation</span>
+<span class="k">RUN</span> apt-get -y update
+<span class="k">RUN</span> apt-get -y install postgresql
+
+<span class="k">USER</span><span class="s"> postgres</span>
+
+<span class="k">COPY</span> db/sql /sql
+<span class="c"># populate database</span>
+<span class="k">RUN</span> /etc/init.d/postgresql start <span class="o">&amp;&amp;</span><span class="se">\</span>
+    psql --command <span class="s2">&quot;CREATE USER deadlock WITH SUPERUSER PASSWORD &#39;no-passwd&#39;;&quot;</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
+    createdb -O deadlock deadlock-db <span class="o">&amp;&amp;</span><span class="se">\</span>
+    psql -d deadlock-db -U deadlock -f /sql/1__schema.sql -f /sql/2__entries.sql <span class="o">&amp;&amp;</span><span class="err">\</span>
+</code></pre></div></p>
                 
                   
                 
@@ -689,7 +729,7 @@ Then it will give you an address you can click on it or copy paste in your brows
     
       <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.2.3",url:{base:"../.."}})</script>
       
     
   </body>
