@@ -1,12 +1,12 @@
-# Code examples
+# Exemples de mission de code
 
-Here are some examples for different languages:  
+Voici plusieurs exemples de missions pour différents langages :  
 
-* [C example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_c)
-* [Cpp example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_cpp)
-* [Java example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java)
-* [Java Maven example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java_maven)
-* [Ocaml example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_ocaml)
-* [Python example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_python)
-* [Score Python example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python)
-* [SQL example](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql)
+* [Exemple en C](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_c)
+* [Exemple en Cpp](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_cpp)
+* [Exemple en Java](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java)
+* [Exemple en Java Maven](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java_maven)
+* [Exemple en Ocaml](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_ocaml)
+* [Exemple en Python](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_python)
+* [Exemple en Python (score)](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python)
+* [Exemple en SQL](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql)

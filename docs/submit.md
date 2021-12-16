@@ -1,3 +1,3 @@
-As a professor you can submit your challenge at [https://takima.deadlock.io/missions/upload](https://takima.deadlock.io/missions/upload)
+En tant que professeur, vous pouvez soumettre votre mission sur [https://takima.deadlock.io/missions/upload](https://takima.deadlock.io/missions/upload)
 
-If you have any [suggestions, or need help](/help)
+Si vous avez des questions ou besoin d'aide, [nous sommes ici](/help)

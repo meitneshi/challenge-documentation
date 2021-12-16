@@ -1,11 +1,13 @@
+### Bac à sable (Sandbox)
 
-### Sandbox
-There is also an other mission mode, sandbox one. Common mission must contains a list of test
-to allow the user to succeed the mission. But sometimes it can be painful or impossible to implement test to make sure the
-user understood and succeed well the challenge. So you can also create a mission without any test but you still have to create
-the Run class. The professor will be able to validate the mission via the student page.  
-The only thing to add is `sandboxed: true` to the challenge.yaml file.
-Example:  
+Il existe un autre mode pour les missions, le mode bac à sable (sandbox).  Les missions classiques doivent
+contenir plusieurs tests permettant de verifier que le candidat a bien réussi la mission. Mais parfois, il est difficile 
+voire impossible d'implémenter suffisamment de test pour s'assurer que le candidat ait bien compris et réussi le challenge.  
+Vous pouvez alors créer une mission sans aucun test, mais vous devrez tout de même créer la classe Run. Le professeur
+pourra valider la mission via la page de l'étudiant.  
+Il vous suffit d'ajouter la ligne `sandboxed: true` dans le fichier challenge.yml.
+
+Exemple :  
 ```yaml
 name: code_interview_card_game
 label: Card Game
@@ -16,10 +18,14 @@ sandboxed: true
 ```
 
 
-### Blacklist words
-By default there are some words the user cannot use into his code. You can find example into `resources/default/blacklist`.
-You can also create your own blacklist for your mission by creating a blacklist file next to the challenge.yaml, then fill it as a csv file. It also supports regex expressions.
-Example of blacklist file:  
+### Liste noire
+Par défaut, il existe une liste noire de mots que le candidat ne peut pas insérer dans son code. 
+Un exemple est disponible dans le répertoire contenant toutes les missions de Deadlock. Vous trouverez au même niveau que les missions,
+un dossier `resources` contenant les ressources utile pour la création d'une mission dont un exemple de liste noire dans `default/blacklist`.  
+Vous pouvez également créer votre propre liste noire pour une mission en créant un fichier `blacklist` au même niveau que le challenge.yml
+et en le remplissant comme un fichier csv. Il supporte également les expressions régulière (regex).
+
+Exemple de fichier blacklist :   
 ```bash
 [^<>](<|>)[^><],(System\.exit\()(\d)*(\)),(Runtime\.getRuntime\(\)\.exit\(\d*\))
 ```

@@ -1,29 +1,30 @@
-# How does it work ?
-If you are here, you already read the [Getting Started](/#getting-started) and you want to explore more about how a mission works.
-We are going to explain you different files, 
+# Comment ça marche ?
+Si vous êtes ici, nous supposons que vous avez déjà parcouru [les bases](/#pour-commencer) et vous désirez en apprendre plus sur comment une mission fonctionne.  
+Nous allons vous expliquer l'utilité de tous les fichiers d'une mission.
 
-
-To be sure to understand the next parts you have to be familiar with:
+Pour être à l'aise avec la suite, vous devez posséder les bases en : 
 
 * [Docker](https://www.docker.com/)
-* Yaml file
+* Fichier Yaml
 
 #### Dockerfile
-When your candidate submits his code, a Docker container will be created.
-The name of the Docker image will be your mission name, prefixed with **code_**.  
-**Important:** your container should have its own CMD or ENTRYPOINT defined.
-Before your container is executed, your candidate code will be pasted within **template** folder.
-**Where** and **what** this file is entirely up to you and shall be submitted in the [descriptor](#challenge-descriptor).
+Quand un candidat soumet son code, un conteneur Docker est créé.  
+Le nom de l'image Docker sera le nom de votre mission préfixée de **code_**.  
+**Important** : Vous devez définir CMD et ENTRYPOINT spécifiquement pour votre conteneur.  
+Avant l'exécution de votre conteneur, le code du candidat est collé dans le dossier **template**.  
+**L'emplacement** et **le contenu** de ce fichier vous est propre et doit être soumis dans le [descripteur](#descripteur-de-mission).
 
-Once the code is inside the container, your container will be ran until completion.
-Note that the STDOUT and STDERR signals will be streamed to the candidate.
-Once it completes, the exit code will be checked.
+Une fois le code déployé dans le conteneur, ce dernier va s'exécuter jusqu'à la fin de vos instructions.
+Rappelez-vous que les signaux STDOUT et STDERR seront affichés dans la console du candidat.
+Une fois terminé, le code de sortie est vérifié.
 
-If the **exit code** is **0**, the mission was **completed** successfully.
-**Otherwise**, it means the candidate has **failed**.
+Si le **code de sortie** est **0**, la mission est un **succès**.  
+**Sinon**, cela veut dire que le candidat a **échoué**.
 
-You can custom the Dockerfile has you wish, include external library to allow your user to have new experiences !  
-Example of a python mission with **nymphy, sklearn and pandas libraries**:  
+Vous pouvez personnaliser le Dockerfile à volonté en incluant par exemple des librairies externes pour permettre au candidat
+d'avoir accès à encore plus de fonctionnalités !
+
+Exemple d'une mission python incluant les librairies **nymphy, sklearn et pandas**
 ```Dockerfile
 FROM python:3.7-slim
 RUN pip install numpy sklearn pandas
@@ -34,28 +35,27 @@ COPY run.sh /
 RUN chmod +x run.sh
 ENTRYPOINT ["/run.sh"]
 ```
-The build step is done only one time when your mission is accepeted by the Deadlock team.
+L'étape de build est effectuée une foi seulement lorsque la mission est acceptée par l'équipe Deadlock.
 
-
-#### Mission descriptor
-Each mission has its own mission descriptor in challengename/challenge.yaml.
-It is used to create the mission container and retrieve your specifications regarding the language and file target.
+#### Descripteur de mission
+Chaque mission a son propre descripteur disponible dans challengename/challenge.yml.  
+Il est utilisé pour créer le conteneur de mission et récupérer les spécificités de la mission concernant les langages et fichiers cibles
 
 ```bash
-version: 1.0 # You have to increase it if you have changed something in your code
-name: code_halloween_candy # your mission name. MUST be equal to the mission folder
-label: Halloween Candy # your mission label
-description: Help your brother split his halloween candy # your mission description, in english
-level: jarjarbinks # your mission level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master
-type: CODING # this is a coding game
+version: 1.0 # A incrémenter si le code évolue
+name: code_halloween_candy # Le nom de la missions. Il DOIT être identique au nom du dossier de la mission
+label: Halloween Candy # Le libellé de la mission
+description: Help your brother split his halloween candy # La description de la mission en anglais
+level: jarjarbinks # Le niveau de la mission. Du plus facile au plus difficile : jarjarbinks, ewok, padawan, jedi, master
+type: CODING # Le type de la mission. Ici : coding game
 meta:
-  private: true # if true mission will only be visible on your instance (youSchool.deadlock.io), default to false, visible by everyone.
-xp: # the experience it should bring. any label is supported
-  programming: 1 # this is a weight, not a number
+  private: true # Si true, la mission sera uniquement visible sur votre instance "ecole.deadlock.io), par défaut : false --> visible par tout le monde.
+xp: # le nombre de points d'expérience que cette mission rapporte dans chaque domaine listé en dessous
+  programming: 1 # Il s'agit d'un poids et non d'un simple nombre.
   java: 1
-coding: # coding game specifics
-  templateDirectory: src/java/main/template # code provided to the user
-  successDirectory: src/java/main/success # solution of the challenge
-  target: CandySplitter.java # the target file path, consider as Main file
-  editorMode: java # the language to be displayed by the web editor
+coding: # Spécifique au challenge de type code
+  templateDirectory: src/java/main/template # Le code fournit au candidat
+  successDirectory: src/java/main/success # La solution de la mission
+  target: CandySplitter.java # Le path du fichier cible considéré comme fichier Main
+  editorMode: java # Le langage à afficher dans l'éditeur Web
 ```

@@ -1,1 +1,5 @@
+# build
 site/
+
+# IDE specific
+/.idea

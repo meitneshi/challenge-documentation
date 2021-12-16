@@ -1,9 +1,9 @@
-# Multi language
+# Multi-langage (metamorph)
 
-When you are creating a challenge, you can create one independent of the programming language.  
-It gives the ability for the final user to select it's own programming language!  
+Vous pouvez créer une mission indépendamment du langage dans lequel elle sera résolue.  
+Le candidat est donc libre de choisir son langage préféré pour résoudre le problème !  
 
-Available languages :
+Liste des langages supportés par Deadlock :
 
 * Java 11.0.5 (openjdk)
 * Kotlin 1.3.70-eap-184
@@ -11,15 +11,17 @@ Available languages :
 * C/C++ 9.2.0
 * Rust 1.39.0
 * Go 1.12.16
-* Javascript with NodeJS 12.15.0
+* Javascript avec NodeJS 12.15.0
 * Ruby 2.6.6
 * Ocaml 4.08.1
 
 
-Let's say you want write a Fibonacci challenge.  
-Create a new directory and create a `entry.rs` file, it will define:
-- which language is available for the user,
-- all your tests to validate user code.  
+Imaginons que vous souhaitez écrire une mission d'implémentation de la suite de Fibonacci.  
+
+Créer un nouveau dossier contenant un fichier `entry.rs`. Ce fichier définit : 
+
+- quel(s) langage(s) sont disponibles pour l'implémentation de la résolution du candidat,
+- tous les tests pour valider le code du candidat.  
 
 ```rust linenums="1"
 challenge! {{
@@ -27,10 +29,10 @@ challenge! {{
 }}
 ```
 
-In the first array you are listing all languages the user will be able to chose on the page.  
+Dans le premier tableau sont énuméré tous les langages que le candidat pourra sélectionner au moment de développer la solution à la mission.  
 
-Then you are going to write different tests, which one will be run if the previous one succeeded.
-Let's write the first one !
+Ensuite, vous devez écrire différents tests, chacun sera exécuté seulement si le précédent réussi.
+Ecrivons ensemble le premier !
 
 ```rust linenums="1"
 challenge! {{
@@ -44,176 +46,176 @@ challenge! {{
 }}
 ```
 
-It will call the user program with the `0` as *input* and is waiting to have `1` as
-ouput.  
-By default for each language the user will have a template, you can custom each one for each language:
+Ce test va appeler le programme du candidat avec `0` comme *entrée* et s'attend à avoir `1` comme *sortie*.  
+Par défaut, pour chaque langage, le candidat dispose d'un template. Vous pouvez personnaliser le template pour chaque langage :
 
-```Java linenums="1" tab=
-public class Main {
-    public static void main(String[] args) {
-        if (args.length > 0) {
-            // Called when you submit your code.
-            System.out.println(fibonacci(Long.ValueOf(args[0])));
-        } else {
-            // Called when you run your code.
-            System.out.println("Hello World!");
+=== "Java"
+    ```Java linenums="1"
+    public class Main {
+        public static void main(String[] args) {
+            if (args.length > 0) {
+                // Called when you submit your code.
+                System.out.println(fibonacci(Long.ValueOf(args[0])));
+            } else {
+                // Called when you run your code.
+                System.out.println("Hello World!");
+            }
+        }
+    
+        public static long fibonacci(long n) {
+            return n;
         }
     }
-
-    public static long fibonacci(long n) {
+    ```
+=== "Javascript"
+    ```Javascript linenums="1" 
+    // CommonJS
+    if (process.argv.length > 2) {
+        // args given, code submitted
+        console.log(fibonacci(process.argv[2]));
+    } else {
+        // no given, code ran
+        console.log("Hello World!");
+    }
+    
+    function fibonacci(n) {
         return n;
     }
-}
-```
-
-```Javascript linenums="1" tab=
-// CommonJS
-if (process.argv.length > 2) {
-    // args given, code submitted
-    console.log(fibonacci(process.argv[2]));
-} else {
-    // no given, code ran
-    console.log("Hello World!");
-}
-
-function fibonacci(n) {
-    return n;
-}
-```
-
-```Python linenums="1" tab=
-import sys;
-
-def fibonacci(n):
-    return n
-
-if (len(sys.argv) > 1):
-    # args given, code submitted
-    print(fibonacci(sys.argv[1]))
-else:
-    # no given, code ran
-    print("Hello World!")
-```
-
-```Go linenums="1" tab=
-package main
-import (
-    "fmt"
-    "os"
-)
-
-func Fibonacci(n int64) int64{
-    return n 
-}
-
-func main() {
-    if (len(os.Args) > 1) {
-        // args given, code submitted
-        arg := os.Args[1]
-
-        fmt.Println(Fibonacci(arg))
-    } else {
-        // no given, code ran
-        fmt.Println("Hello World!")
+    ```
+=== "Python"
+    ```Python linenums="1" 
+    import sys;
+    
+    def fibonacci(n):
+        return n
+    
+    if (len(sys.argv) > 1):
+        # args given, code submitted
+        print(fibonacci(sys.argv[1]))
+    else:
+        # no given, code ran
+        print("Hello World!")
+    ```
+=== "Go"    
+    ```Go linenums="1" 
+    package main
+    import (
+        "fmt"
+        "os"
+    )
+    
+    func Fibonacci(n int64) int64{
+        return n 
     }
-}
-```
-
-```C linenums="1" tab=
-#include <stdio.h>
-#include <stdlib.h>
-
-long fibonacci(long n)
-{
-    return n;
-}
-
-int main(int argc, char **argv)
-{
-    if (argc > 1) {
-        // args given, code submitted
-        printf(fibonacci(argv[1]));
-    } else {
-        // no given, code ran
-        printf("Hello World!");
+    
+    func main() {
+        if (len(os.Args) > 1) {
+            // args given, code submitted
+            arg := os.Args[1]
+    
+            fmt.Println(Fibonacci(arg))
+        } else {
+            // no given, code ran
+            fmt.Println("Hello World!")
+        }
     }
-}
-```
-
-```Cpp linenums="1" tab=
-#include <iostream>
-#include <bits/stdc++.h> 
-
-bool fibonacci(long n)
-{
-    return n;
-}
-
-int main(int argc, char **argv)
-{
-    if (argc > 1) {
-        // args given, code submitted
-        printf(fibonacci(stol(argv[1])))
-    } else {
-        // no given, code ran
-        printf("Hello World!");
+    ```
+=== "C"    
+    ```C linenums="1" 
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    long fibonacci(long n)
+    {
+        return n;
     }
-}
-```
-
-```Ocaml linenums="1" tab=
-let fibonacci n =
-  let rec fib_2termes n a b =
-    match n with
-    | 0 -> a
-    | 1 -> b
-    | _ -> fib_2termes (n - 1) b (a + b)
-  in fib_2termes n 0 1 ;;
-
-if Array.length Sys.argv > 1 = true
-    then print_int (fibonacci  (int_of_string Sys.argv.(1)));;
-```
-
-```Rust linenums="1" tab=
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    if args.len() == 2 {
-        // Called when you submit your code.
-        println!("{}", fibonacci(&args[1]))
-    } else {
-        // Called when you run your code.
-        println!("Hello World!")
+    
+    int main(int argc, char **argv)
+    {
+        if (argc > 1) {
+            // args given, code submitted
+            printf(fibonacci(argv[1]));
+        } else {
+            // no given, code ran
+            printf("Hello World!");
+        }
     }
-}
-
-fn fibonacci(n: i64) -> i64{
-    n
-}
-```
-
-```Ruby linenums="1" tab=
-class Main
-  def initialize
-    if(ARGV.length() > 0)
-      then puts fibonacci (ARGV[0].to_i) # args given, code submitted
-      else puts "Hello World!" # no args given, code runner
+    ```
+=== "Cpp"    
+    ```Cpp linenums="1" 
+    #include <iostream>
+    #include <bits/stdc++.h> 
+    
+    bool fibonacci(long n)
+    {
+        return n;
+    }
+    
+    int main(int argc, char **argv)
+    {
+        if (argc > 1) {
+            // args given, code submitted
+            printf(fibonacci(stol(argv[1])))
+        } else {
+            // no given, code ran
+            printf("Hello World!");
+        }
+    }
+    ```
+=== "Ocaml"    
+    ```Ocaml linenums="1" 
+    let fibonacci n =
+      let rec fib_2termes n a b =
+        match n with
+        | 0 -> a
+        | 1 -> b
+        | _ -> fib_2termes (n - 1) b (a + b)
+      in fib_2termes n 0 1 ;;
+    
+    if Array.length Sys.argv > 1 = true
+        then print_int (fibonacci  (int_of_string Sys.argv.(1)));;
+    ```
+=== "Rust"
+    ```Rust linenums="1" 
+    use std::env;
+    
+    fn main() {
+        let args: Vec<String> = env::args().collect();
+    
+        if args.len() == 2 {
+            // Called when you submit your code.
+            println!("{}", fibonacci(&args[1]))
+        } else {
+            // Called when you run your code.
+            println!("Hello World!")
+        }
+    }
+    
+    fn fibonacci(n: i64) -> i64{
+        n
+    }
+    ```
+=== "Ruby"    
+    ```Ruby linenums="1" 
+    class Main
+      def initialize
+        if(ARGV.length() > 0)
+          then puts fibonacci (ARGV[0].to_i) # args given, code submitted
+          else puts "Hello World!" # no args given, code runner
+        end
+      end
+      def fibonacci (n)
+        0
+      end
     end
-  end
-  def fibonacci (n)
-    0
-  end
-end
+    
+    # initialize object
+    Main.new
+    ```
 
-# initialize object
-Main.new
-```
-
-The user will have to fill the `fibonacci` method and the result will be printed into the stdout.  
-Keep going with more tests:  
-```rust linenums="1"
+L'utilisateur doit compléter la méthode `fibonacci` et le résultat sera affiché dans le stdout (console).  
+Continuons avec plus de tests :  
+```rust linenums="1" 
 challenge! {{
     "languages": ["java", "python", "c", "cpp", "go", "ruby", "rust", "javascript"],
     "tests": [
@@ -241,21 +243,22 @@ challenge! {{
 }}
 ```
 
-Sounds a bit static ?
-You can add more complex tests using `random` method available by our runner:  
+#### Tests aléatoires
+Cela vous semble trop statique ?
+Vous pouvez ajouter des tests plus complexe avec des entrées aléatoires en utilisant la méthode `random` fournie par notre runner :  
 ```Yaml
-randt(n): random from 0 included to n excluded.
-randft(n, m): random from n included to m excluded.
+randt(n): génère un nombre aléatoire entre 0 et n exclu.
+randft(n, m): gnère un nombre aléatoire entre n et m exclu.
 ```
-```Rust
+```Rust linenums="1" 
 {
     input: randft(20, 30),
     expected: ?
 }
 ```
-Which give us a problem, what to write for the expected value ?  
-No worries! You can call your own solution instead of writing something static!
-```Rust
+Cela pose un problème. Que devons nous écrire dans la valeur attendue ?  
+Pas de panique, vous pouvez appeler votre propre solution au lieu d'écrire une réponse attendue statique !
+```Rust linenums="1" 
 {
     input: randft(20, 30),
     expected: call("java", "Solution.java")
@@ -265,10 +268,10 @@ No worries! You can call your own solution instead of writing something static!
     expected: call("python", "solution.py")
 }
 ```
-It will be the same logic, your `solution.py` will be called by our Python interpreter with the *input* value
-and you have to write the solution result to the *stdout*.  
-For instance with Fibonacci:  
-```Python
+La même logique est appliquée, votre `solution.py` est appelée par notre interprèteur Python avec les données de *input*
+et vous devez écrire le résultat renvoyé par votre solution dans le *stdout*.  
+Par exemple pour la suite de Fibonnaci :  
+```Python linenums="1" 
 # solution.py
 def fibo(n):
     if n <= 1:
@@ -279,8 +282,8 @@ def fibo(n):
 print(fibo(sys.argv[1]))
 ```
 
-Then the *stdout* given with *print* will be compared with the user program.  
-You can choose amoung these interpreters:  
+Ensuite la sortie *stdout* donnée avec la méthode *print* est comparée à celle résultant du programme du candidat.  
+Vous pouvez choisir un interprèteur parmi la liste de ceux proposé ci-après :   
 
 |           |              |      |      |
 | ----------|------------- |:----:|-----:|
@@ -288,9 +291,9 @@ You can choose amoung these interpreters:
 | rust      | python       | go   | cpp  |
 
 
-#### Repeat
-But what if you wish to execute 50 times a random test?
-That's not a problem, add the **repeat** parameter to your test:
+#### Répétition
+Qu'en est-il si vous désirez exécuter 50 tests aléatoire à la suite ?  
+Ce n'est pas un problème, tout ce que vous avez à faire est d'ajouter le paramètre **repeat** à votre test :
 ```Rust
 {
     input: randt(20),
@@ -299,8 +302,8 @@ That's not a problem, add the **repeat** parameter to your test:
 }
 ```
 
-#### Input call
-That's not all, you can also call your own program to generate the input:  
+#### Valeur d'entrée
+Ce n'est pas tout, vous pouvez aussi appeler votre propre programme pour générer les valeurs d'entrée :  
 ```Rust
 {
     input: call("javascript", "generate.js"),
@@ -308,17 +311,17 @@ That's not all, you can also call your own program to generate the input:
 }
 ```
 
-#### Open a file
-You can also open a file: 
+#### Ouvrir un ficher
+Vous pouvez également ouvrir un fichier : 
 ```Rust
 {
     input: open("file.txt"),
     expected: call("python", "solution.py")
 }
 ```
-It will be given as a *String* to the user.
+Il sera servi au candidat en tant que *Chaîne de caractère*.
 
-Once you have complete the `entry.rs` you have to complete the `challenge.yaml` file:
+Dès que vous aurez compléter le fichier `entry.rs`, il faut compléter le fichier `challenge.yaml` :
 ```Yaml
 version: 1.0
 name: code_metamorph_fibo
@@ -336,20 +339,20 @@ coding:
   editorMode: rust
 ```
 
-The `success/` directory contains your solution given to the user when it succeeded the challenge.  
-You can provide the implementation you wish.  
+Le dossier `success/` contient votre solution qui sera donnée au candidat lorsqu'il aura résolu le problème de la mission.  
+Vous êtes libre de choisir le langage et la logique d'implémentation de votre solution.  
 
-To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli/):  
+Pour tester votre programme, vous pouvez utiliser notre [CLI](https://pypi.org/project/deadlock-cli/):  
 ```Bash
-> dcli run . java # Will run template/java/Main.java
-> dcli solve . java # Will execute tests on template/java/Main.java
-> dcli run . python # Will run template/python/Main.py
+> dcli run . java # Exécute template/java/Main.java
+> dcli solve . java # Exécute les tests sur template/java/Main.java
+> dcli run . python # Exécute template/python/Main.py
 ```
 
-Each file placed within a template is provided if the user decide to change the current language.
-For instance if the user decide to use *Rust* interpreter, all files under `template/rust` will be provided.
+Chaque fichier placer dans le dossier `template` est donné au candidat lorsqu'il décide de changer le langage selectionné.
+Par exemple, si le candidat décide d'utiliser l'interpréteur *Rust*, tous les fichier contenu dans `template/rust` lui seront fourni.
 
-What's your challenge must like:
+Votre mission doit ressembler à cela : 
 ```
 .
 ├── challenge.yaml
@@ -376,5 +379,3 @@ What's your challenge must like:
     └── rust
         └── Main.rs
 ```
-
-

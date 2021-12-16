@@ -1,47 +1,48 @@
-# Deadlock missions
+# Missions dans Deadlock
 
 ---
 
-## Overview
+## Vue d'ensemble
 
-This documentation is mainly used to help everyone with the creation of their own learning content, through Deadlock platform.
+Cette documentation a pour but de vous guider dans la création de votre propre support d'apprentissage à travers la plateforme Deadlock.  
+Dans un premier temps nous allons aborder les missions dites 'classiques' mais il existe d'autre type de missions que vous retrouverez à la [fin de ce guide](#et-apres)
 
-## What is a mission ?
-A mission is mainly these elements:
+## Une mission, c'est quoi ?
+Une mission est principalement composée des éléments suivants :
 
-* A documentation: instructions for the user
-* A template folder: code provided to the user
-* A success folder: solution of the challenge
-* An app folder: logic to verify user code
-* The mission descriptor: challenge.yml
-* Many hints: You can add different hints, each one could be unlock with token, user unlock 
+* Une documentation : les instructions pour l'utilisateur
+* Un dossier template : le code fourni à l'utilisateur
+* Un dossier success : la solution de la mission
+* Un dossier app : la logique pour vérifier le code de l'utilisateur
+* Un descripteur de mission : challenge.yml
+* Plusieurs indices : vous pouvez ajouter différents indices qui seront débloqués par l'utilisateur en utilisant des jetons
 
-You can discover many elements on the user interface:
+L'interface utilisateur ressemble donc à ceci : 
 
 ![Challenge interface](img/challenge-interface.png)
 
-1. Documentation with briefing (main informations), hints
-2. Provided code
-3. Run button is used to execute code without any test
-4. Submit button is used to execute test on user code
+1. La documentation avec le briefing (informations principales) et les indices
+2. Le code fourni
+3. Le bouton Exécuter qui lance le code de l'utilisateur sans tests (vérification de syntaxe, ...)
+4. Le bouton Soumettre qui exécute le code de l'utilisateur avec les tests
 
-## Getting Started
-Each mission came with a special structure, it will be provided by our [DCLI tool](https://github.com/deadlock-resources/dcli)
-So it's pretty easy to start any challenge, you will just have to care what you want to deliver to your users.
+## Pour Commencer
+Chaque mission possède une structure spécifique fournie par notre [outil DCLI](https://github.com/deadlock-resources/dcli).
+Démarrer une mission est assez facile, vous n'avez qu'à vous soucier de ce que vous désirez fournir à vos utilisateurs.
 
-### Install DCLI
-Requirements:
+### Installation de DCLI
+Pré-requis :
 
-* Docker ([as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user))
+* Docker ([à installer en non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user))
 * Python >= 3.2
-* pip installed ([with python](https://pip.pypa.io/en/stable/installing/) or from your package manager)
+* pip installé ([avec python](https://pip.pypa.io/en/stable/installing/) ou depuis votre gestionnaire de package)
 
-Install [dcli](https://pypi.org/project/deadlock-cli/) package using pip:  
+Une fois les pré-requis installés vous pouvez installer le [dcli](https://pypi.org/project/deadlock-cli/) via pip :  
 `pip3 install deadlock-cli`  
 
 
-Then you shoud have `dcli` command on your system. Run `dcli --help` to check that everything worked well.  
-*If you have something like `command not found` or `module not found` when you run `dcli` try to export `/home/user/.local/bin/` to your $PATH.*
+Ensuite vous devriez pouvoir utiliser la commande `dcli` depuis votre terminal. Exécuter la commande `dcli --help` pour vérifier que tout fonctionne.  
+*Si la console affiche un message du type `command not found` ou `module not found` quand vous exécuter la commande `dcli`, essayer d'exporter `/home/user/.local/bin` dans votre variable $PATH.*
 ```bash
 > dcli --help
 # man page should be printed
@@ -49,22 +50,23 @@ Then you shoud have `dcli` command on your system. Run `dcli --help` to check th
 current is 1.2.0
 ```
 
-### Create your first code challenge
-Let's create a Java mission to explain you the concept behind the structure.
-Java is just for the example, once you understand the architecture you will be 
-able to create a challenge in any language. Furthermore `dcli` is able to generate 
-other languages, we also have [different examples](https://github.com/deadlock-resources/challenge-examples).
+### Créer votre premier challenge
+Nous allons créer une mission Java pour expliquer le concept derrière la structure.
+Java est utilisé pour l'exemple, dès que vous aurez compris l'architecture, vous serez
+en mesure de créer une mission dans n'importe quel langage.  
+De plus `dcli` peut générer
+des missions dans d'autres langages, vous pouvez vous inspirer de [nos exemples](https://github.com/deadlock-resources/challenge-examples).
 
-Let's start with a Java example:  
+Commençons par l'exemple Java :  
 
 ```bash
 > dcli gen java
 ```
-We will generate a simple mission where the user must return `Hello World!`.
+Nous allons créer une mission simple où l'utilisateur doit juste afficher `Hello World!`.
 
 ![DCLI gen java](img/dcli-gen-java.gif)
 
-You can explore the generated `code_hello_world` directory:
+Explorons le dossier généré `code_hello_world` par `dcli` :
 ```bash
 code_hello_world/
 ├── docs
@@ -89,21 +91,22 @@ code_hello_world/
 
 ```
 
-As you saw it, the goal is simple, implement the `sayHello()` method within `template` package.
-All files under `template` package will be served to the user, you can create as much as you want.
-The `HelloWorld.java` file under `success` package will be served only when the user succeed the challenge.
+La mission est simple, implémenter la méthode `sayHello()` au sein du package `template`.
+Tous les fichiers dans le package `template` seront fournis à l'utilisateur, vous pouvez en créer autant que vous le désirez.  
 
-You have to complete all `//TODO` present in the code.  
-Let's start with `src/main/java/success/HelloWorld.java`, this is the solution file.  
+*Le fichier `HelloWorld.java` dans le package `success` ne sera fourni à l'utilisateur que lorsqu'il aura réussi la mission.*
+
+Vous devez résoudre tous les `//TODO` présents dans le code.  
+Commençons par `src/main/java/success/HelloWorld.java`, il s'agit du fichier de solution.
 ```java
 public static String sayHello() {
     //TODO write your own solution
     return null;
 }
 ```
-Pretty simple the method has to return `"Hello World!"`.  
-Next part is to compare the user result with the expected result, this part is done under `src/main/java/app/Solve.java`.
-Dcli generates some part of code for you but have to complete with your own logic.
+La méthode doit simplement retourner `"Hello World!"`.  
+L'étape suivante consiste à comparer le résultat de l'utilisateur avec le résultat attendu, cela est effectué dans `src/main/java/app/Solve.java`.  
+DCLI génère certaines parties de code pour vous, mais vous devrez le compléter avec votre propre algorithme.
 ``` java
 public static void main(String[] args) {
     try {
@@ -128,81 +131,84 @@ public static void main(String[] args) {
     }
 }
 ```
-What it does is that if the function HelloWorld.sayHello() does not return "Hello World!" or throws an exception,
-it logs an error and exits with an error code.
+Le code ci-dessus logue une erreur et s'arrête avec un code d'erreur si la fonction `HelloWorld.sayHello()` 
+ne retourne pas "Hello World!" ou si elle lance une exception.
 
-In general, there are 2 kinds of outputs you have to take into account.
+En général, il y a 2 types de résultats que vous devez prendre en considération.
 
-1. Error: The code sent does not compile, does not have the right signature, code did not return the expected result, something bad happened.
-2. Success: The code did complete normally and returned the expected result
+1. Error : Le code ne compile pas, la fonction n'a pas la bonne signature, le code ne retourne pas le résultat attendu, quelque chose d'autre s'est mal passé.
+2. Success : Le code compile, s'est terminé normalement et retourne le résultat attendu.
 
-A simple `Logger` class is also generated. You can now test your mission with the following command lines:
+Une simple classe `Logger` est également générée.  
+Vous pouvez maintenant tester votre mission avec les commandes suivantes : 
 ```Bash
 > cd ./code_hello_world
 > dcli run . # Run the program, execute the file `src/main/java/app/Run.java`
 > dcli solve . # Run the program with your tests, execute the file `src/main/java/app/Solve.java`
 ```
-You can try to modify the `HelloWorld.java` file under template package to reach the solution like you were the candidate.
+Essayer de modifier le fichier `HelloWorld.java` du package template pour compléter la mission comme si vous étiez un candidat. 
 
 ### Documentation
-The documentation is stored in **code_hello_world/docs/**.
-It contains the Briefing to expose the problem your candidate has to solve and motivate him.
-It should be written in Markdown, it supports HTML tags and LateX language.
+La documentation de la mission est disponible dans **code_hello_world/docs/**.  
+Elle contient le briefing qui expose le problème que le candidat doit résoudre. Le briefing doit être contextualisé pour respecter la gamification propre à Deadlock.  
+Le briefing doit être écrit en Markdown, il peut contenir des balises HTML ou être écrit en langage LateX.
 
-* briefing.md: contains the default instructions
-* debriefing.md: contains a text provided when user solve the challenge
-* hint1.md: first hint user can unlock (optional)
-* hint2.md: an other hint (optional)
+* **briefing.md** : contient les instructions de base de la mission
+* **debriefing.md** : contient le texte affiché quand l'utilisateur résout la mission
+* **hint1.md** : premier indice que le candidat peut débloquer (optionnel)
+* **hint2.md** : un autre indice (optionnel)
 
-examples of hints:  
+Exemple d'indices :  
 **hint1.md**
 ```Markdown
-The String that you need to return is the two words that you usually
-display when you start learning a language for instance.
-It can be considered as a greeting. (PS: the word is not "It Works")
+La chaîne de caractère que vous devez retourner n'est rien d'autre que les 
+deux mots que vous affichez lorsque vous apprenez un nouveau langage.
+On peut le considérer comme un message de bienvenue. (PS : la solution n'est pas "It works").
 ```
 
 **hint2.md**
 ```Markdown
-Alright, the String is case sensitive, so you might want to try multiple cases.
-Also, we were very emotional when we wrote this challenge, and decided to end the phrase with a "!"
+La chaîne de caractère attendue est sensible à la casse, vous devriez essayer plusieurs casses.
+De plus, nous nous sommes enflammés en écrivant cette mission et nous avons décidé de ponctuer la solution avec une "!".
 ```
 
-**N.B.:** hint2 will always be given after hint1.
+**N.B. :** l'ordre des indices a une importance (le second indice ne peut être débloqué que si le premier a été débloqué).
 
-At this point, we have a functional Java application that will test the content of a **compiled** HelloWorld.class class and exit the relevant code.
-If you want to understand more how the mission works and custom more your mission you can [read this](how-does-it-work.md).
+A ce stade, nous avons une application Java fonctionnelle qui va tester le contenu d'une classe **compilé** HelloWorld.class et retourner un code d'erreur ou de succès.  
+Si vous voulez aller plus loin en comprenant le fonctionnement des missions pour les personnaliser encore plus, vous pouvez [lire ceci](how-does-it-work.md).
 
 
 ## i18n
-The default files into the docs folder contains the english translations.
-If you want handle other languages you have to create new directories following this way:
+Le dossier docs contient par défaut les fichiers pour la traduction anglaise de la mission.  
+Si vous voulez supporter d'autres langues, vous devez créer un nouveau dossier par langue en suivant cette arborescence : 
 
-* docs
-    * briefing.md
-    * fr
-        * briefing.md
+```bash
+├── docs
+│   ├── briefing.md
+│   └── fr
+│       └── briefing.md
+```
 
-and so on.
+et ainsi de suite.
 
-## Level
-Each mission has his own level
+## Niveau
+Chaque mission à son propre niveau de complexité
 
- - Jajarbinks (easiest)
+ - Jajarbinks (le plus facile)
  - Ewok
  - Padawan
  - Jedi
- - Master (hardest)  
+ - Master (le plus difficile)  
 
-When you create your own mission your can help you with the [references](./reference.md) to set a correct level
-to your challenge.
+Quand vous créez votre propre mission, vous pouvez vous appuyer sur nos [missions de référence](reference.md)
+pour renseigner le bon niveau à votre mission.
 
-## What's next
-You can explore different types of challenge:
+## Et après ?
+Vous pouvez explorer les différents types de missions proposées dans Deadlock : 
 
 * [VsCode](challenge-types/vscode.md)
-* [Multi language](challenge-types/metamorph.md)
-* [Multi Service](challenge-types/multi-service.md)
+* [Multi-langage](challenge-types/metamorph.md)
+* [Multi-service](challenge-types/multi-service.md)
 * [Score](challenge-types/score.md)
 * [SQL](challenge-types/sql.md)
 

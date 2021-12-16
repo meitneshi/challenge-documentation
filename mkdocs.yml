@@ -1,36 +1,36 @@
-site_name: Deadlock Missions Docs
+site_name: Documentation Missions Deadlock
 
 theme:
   name: material
   palette:
     primary: blue
     accent: blue
-  logo:
-    icon: library_books
   font:
     text: Roboto
     code: Roboto Mono
   feature:
-    tabs: true
     instant: true
+    language: fr
 
 nav:
-  - Home: index.md
-  - Types of challenge:
+  - Accueil: index.md
+  - Types de missions:
      - VsCode: challenge-types/vscode.md
-     - Multi language: challenge-types/metamorph.md
-     - Multi service: challenge-types/multi-service.md
+     - Multi-langage: challenge-types/metamorph.md
+     - Multi-service: challenge-types/multi-service.md
      - Score: challenge-types/score.md
      - SQL: challenge-types/sql.md
-  - Examples: challenge-types/code.md
+  - Exemples: challenge-types/code.md
   - Mode: mode/index.md
-  - How does it work ?: how-does-it-work.md
-  - About:
-    - Contributing: contributing.md
-  - Getting help: help.md
-  - Submit: submit.md
+  - Comment ça marche ?: how-does-it-work.md
+  - A propos:
+    - Contribuer: contributing.md
+  - Besoin d'aide: help.md
+  - Soumission: submit.md
 markdown_extensions:
   - markdown.extensions.admonition:
   - pymdownx.superfences:
+  - pymdownx.tabbed:
+      alternate_style: true
 
 

@@ -1,38 +1,39 @@
-# Score challenge
+# Mission Score
 
-When you are creating a code mission, the user has two ways to execute the code ([see more information on main page](/challenge-documentation)):  
+Lorsque vous créez une mission de code, le candidat dispose de deux manières d'exécuter son code (Plus d'infos [ici](/challenge-documentation)) : 
 
-* Run -> will only run the code without any test
-* Submit -> will run the code with tests you have wrote.
+* Exécuter -> exécute le code seul sans les tests
+* Soumettre -> exécute le code avec les tests que vous avez fournis.
 
 
-You are able to return a *score* when you test the user code.
-For instance if you consider 50 out of 100 tests succeeded you must write it that way (depends of the language):
+Il est possible de retourner un **score** lorsque vous testez le code du candidat.  
+Par exemple, si vous considérez que si 50 tests validés sur les 100 disponibles suffisent à considérer la mission comme 
+réussie, vous devez l'écrire de cette manière (dépendante du langage) : 
 
-```Java tab=
-public static void main(String[] args) {
-    // test user code
-    Mission.INSTANCE.done(50);
-}
+=== "Java"
+    ```Java 
+    public static void main(String[] args) {
+        // test user code
+        Mission.INSTANCE.done(50);
+    }
+    ```
+=== "Python"
+    ```Python 
+    def main():
+        # test user code
+        Mission.done(50):
+    ```
 
-```
-
-```Python tab=
-def main():
-    # test user code
-    Mission.done(50):
-```
-
-You also have to specify within the `challenge.yaml` different fields:
+Vous pouvez également spécifier d'autre champs dans le `challenge.yml` :
 ```yaml
  score:
-    min: 0 # default min score, can be omitted
-    minToValidate: 90
-    max: 100 # default max score, can be omitted
+    min: 0 # score minimum par défaut (optionnel)
+    minToValidate: 90 # score minimum pour valider la mission
+    max: 100 # score maximum par défaut (optionnel)
 ```
 
-At the end on the interface your users will get a new tab next to the **Console**.
-![Example score Python](../../img/example-score.png)
+Le candidat dispose alors d'un nouvel onglet sur son interface juste à coté de la **Console**.
+![Example score Python](../img/example-score.png)
 
-### Example
+### Exemple
 [code_score_python](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_score_python)

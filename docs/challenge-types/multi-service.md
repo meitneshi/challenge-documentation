@@ -1,24 +1,24 @@
-# Multi-service missions
-Sometimes, you may have to declare multiple services in your challenge.
-This feature is fully supported and uses containers within one network.
+# Missions multi-service
+Parfois, vous devrez déclarer plusieurs services dans votre mission.
+Cette fonctionnalité est totalement supporter et utilise les réseaux de conteneurs (container network).
 
-Here is a walkthrough of adding another service named **db**.
-In the main folder of your challenge, create the directories **code_your_mission/services/db**.  
-This directory will contain your service files.
+Nous allons vous guider dans le processus d'ajout d'un service supplémentaire appelé **db**.
+Dans le dossier principal de votre mission, créer les dossiers **code_your_mission/services/db**.  
+Ce dossier va contenir les fichiers de votre service.
 
-In this folder, you must declare at least two files:  
+Dans ce dossier, vous devez créer au moins ces deux fichiers :  
 
-- The service descriptor **service.yaml**
-- The service container **Dockerfile**
+- Le descripteur du service **service.yaml**
+- Le conteneur du service **Dockerfile**
 
 
-### The service descriptor
-The service descriptor can expose ports and a specific alias (which must be the service name).
-Following on our example, the **db** service would be:
+### Le descripteur du service
+Le descripteur du service expose les ports et un alias spécifique (qui doit être le nom du service).
+En suivant cet exemple, le service ***db*** ressemblerait à :
 ```yaml
 name: db
 exposed_ports:
   - 5432
 ```
 
-You can find an example of a multi services mission though [SQL type challenge](../sql).
+Un exemple de mission multi-services est disponible [ici](../sql).

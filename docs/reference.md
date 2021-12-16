@@ -1,6 +1,8 @@
-# Reference level mission list  
-Hence you have some example of already existing missions. Each one has been set into a level, you can use them
-to classify your mission among the five levels.
+# Références pour le niveau des missions  
+Vous trouverez ici quelques exemples de missions existantes.  
+Un niveau de difficulté a été assigné à chacune d'elles, 
+vous pouvez utiliser ce classement pour positionner le niveau de difficulté de votre mission parmi les cinq
+niveaux proposés
 
 <table>
   <tr>

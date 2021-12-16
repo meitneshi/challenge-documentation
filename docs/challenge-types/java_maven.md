@@ -1,22 +1,22 @@
 # Java Maven
-When creating a Java Maven mission, you need to download all the project's dependencies in a build.sh with Maven.
+Lorsque vous créez une mission Java Maven, vous devez télécharger toutes les dépendances du projet dans un fichier `build.sh` en utilisant Maven.
 ```Bash
 #!/bin/sh
-# Script runned before building Docker image
+# Script exécuté avant le build de l'image Docker
 
-# Download all dependencies of the project to put them into the Docker image via Dockerfile
-# Here we have defined our dependencies into a jar directory
+# Télécharge toutes le dépendances du projet pour les ajouter à l'image Docker via le Dockerfile
+# Ici, nous avons défini nos dépendances dans un jar
 mvn -B dependency:copy-dependencies -DoutputDirectory=jar
 ```
 
-Then the dependencies need to be put in a Dockerfile 
+Ensuite, les dépendances sont ajouté au Dockerfile 
 ```Dockerfile
-# Add all dependency jars
+# Ajoute les jars de toutes les dépendances
 ADD jar src/main/java/jar
 ```
 
-### Challenge.yml file
-you have to complete the `challenge.yaml` file:
+### Fichier Challenge.yml
+Vou devez compléter le fichier `challenge.yaml` : 
 ```Yaml
 version: 1.0
 name: code_calculator
@@ -34,19 +34,19 @@ coding:
   editorMode: java
 ```
 
-### Template and Success directories
-The 'template/' directory contains the code that will be written by the user trying to solve the challenge.
+### Dossier Template et Success
+Le dossier `template/` contient le code écrit par le candidat tentant de résoudre la mission.
 
-The `success/` directory contains your solution given to the user when it succeeded the challenge.  
-You can provide the implementation you wish.  
+Le dossier `success/` contient votre solution qui sera donnée au candidat lorsqu'il aura réussi la mission.  
+Vous pouvez fournir l'implémentation de solution que vous désirez.  
 
-To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli/):  
+Pour tester votre programme, vous pouvez utiliser notre [CLI](https://pypi.org/project/deadlock-cli/):  
 ```Bash
-> dcli run . # Will run template/
-> dcli solve . # Will execute tests on template/
+> dcli run . # Exécture template/
+> dcli solve . # Exécute les tests de template/
 ```
 
-### Tree example of Java Maven challenge
+### Exemple d'arborescence d'une mission Java Maven
 ```
 ├── challenge.yaml
 ├── docs
@@ -71,5 +71,5 @@ To test your program you can use [our CLI](https://pypi.org/project/deadlock-cli
 │               └── CalculatorTest.java
 ```
 
-### Example
+### Exemple
 [code_java_maven](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_java_maven)

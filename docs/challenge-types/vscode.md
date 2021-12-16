@@ -1,16 +1,17 @@
-# VsCode challenge
+# Challenge VsCode
 
-Do you feel restricted with other challenge types ?  
-Do you want to let your student enjoys a full editor ?
+Les autres types de challenge ne vous conviennent pas ? 
+Vous vous sentez à l'étroit ? Vous voulez que vos étudiants puisse profiter d'un éditeur complet ?
 
-Let's do it with Deadlock in the browser!
+Il est temps d'utiliser VsCode dans le navigateur !  
+Mais avant toute chose, vous devez être familier avec le [DCLI et les bases de création de missions](../../#pour-commencer)
 
-![Demo Vscode gif](/challenge-documentation/img/demo-vscode.gif)
+![Demo Vscode gif](../img/demo-vscode.gif)
 
 
-## How ?
+## Comment ?
 
-You have to create the following files:
+Il vous suffit de créer les fichiers suivants : 
 
 ```S
 ├── base
@@ -31,68 +32,68 @@ You have to create the following files:
 └── thumbnail.png
 ```
 
-* **base** directory containing user files, those files will be delivered to the user when the IDE starts.
-* **docs** contains the briefing, user instructions, the briefing will be opened when the IDE starts. 
+* **base** dossier contenant les fichiers utilisateurs, ces fichiers seront fournis au candidat lorsque l'IDE démarre.
+* **docs** contient le briefing, les instructions utilisateurs. Le briefing sera ouvert au démarrage de l'IDE. 
 * **Dockerfile**
 ```Dockerfile
 FROM registry.e-biz.fr/deadlock-public/deadlock-theia:latest
 
-# You are free to install anything you want
-# The package manager is *apt*
+# Vous pouvez installer tout ce que vous voulez
+# Le gestionnaire de package est *apt*
 
-# destination paths are unchangeable
-COPY base /project # copy user directory to /project
-COPY docs /home/theia/docs # copy instructions
+# les path de destination paths ne doivent pas être modifiés
+COPY base /project # copie le repertoire user dans /project
+COPY docs /home/theia/docs # copie les instructions
 ```
-* **challenge.yaml** is the descriptor file
+* **challenge.yaml** est le fichier descripteur
 ```Yaml
 version: 0.1
 name: code_persist_crud
 label: Crud
 description: This is your moment, you have to create your own CRUD. Your customer requested you to build a Computer DataBase application (codename *CDB*).
-level: ewok # difficulty of the challenge [how it works](https://deadlock-resources.github.io/challenge-documentation/#level)
-type: PERSISTENT # mandatory
-xp: # xp tags, you are free to write your own
-  programming: 1 # this is a weight, not a number
+level: ewok # difficulté du challenge [comment ça marche](https://deadlock-resources.github.io/challenge-documentation/#level)
+type: PERSISTENT # obligatoire
+xp: # points d'expérience, vous pouvez ajouter les labels que vous voulez
+  programming: 1 # c'est un poids, pas un nombre
   java: 1
 coding:
   userDirectory: base
-resources: # Resources given for the container, don't touch it if you are not comfortable with
+resources: # Ressources allouées au conteneur, ne pas modifier si vous n'êtes pas confiant sur le sujet
   cpuLimit: "1200m"
   memoryLimit: "1200Mi"
   cpuRequest: "1000m"
   memoryRequest: "1000Mi"
 persistent:
-  ports: # ports you want to let open for the user
-    web: 3000 # mandatory
-    crud: 9090
+  ports: # ports que vous souhaitez laisser ouvert pour le candidat
+    web: 3000 # obligatoire
+    crud: 9090 # la personne se verra attribuer une url qui redirigera vers le port 9090
 ```
-* thumbnail.png image challenge 
+* **thumbnail.png** image du challenge 
 
-### Add image to the briefing
+### Ajouter des images au briefing
 ```
 ![toast](image:toast.jpg)
 ![Something Else](image:dir/else.png)
 ```
-You must prefix your image path with *image:*
+Vous devez préfixer le path de votre image avec **image:**
 
 
-## How to test ?
+## Comment tester ?
 ```Bash
 > cd ./code_persist_crud
 > dcli run .
 ```
-Then it will give you an address you can click on it or copy paste in your browser.
+Cela vou donnera un lien cliquable que vous pourrez copier dans votre navigateur préféré.
 
-## Add services on startup
+## Ajout de services au démarrage
 
-Let's say you need to start a service when the mission starts.
-For instance a Postgres database.
+Imaginons que vous ayez besoin d'un service au démarrage d'une mission.  
+Par exemple une base de données Postgres
 
-You simply need to add a `startup.sh` script within your Docker image:  
+Il vous suffit d'ajouter un script `startup.sh` dans votre image Docker :  
 `COPY startup.sh /deadlock/startup.sh`
 
-and within your `startup.sh` for instance:  
+et par exemple à l'intérieur de ce `startup.sh` :  
 ```bash
 #!/bin/sh
 
@@ -100,18 +101,18 @@ and within your `startup.sh` for instance:
 service postgresql start
 ```
 
-The `startup.sh` script will be run when the Docker container starts.
+Le script `startup.sh` s'exécute lorsque le conteneur Docker démarre.
 
-*If you need to populate your database, it's better to do it within the Dockerfile (it will be faster than using the startup script):*  
+*Si vous avez besoin de remplir la base de données, il est préférable de le faire dans le Dockerfile (utiliser un script au démarrage va allonger le démarrage du container) :*
 ```Dockerfile
-# Postgresql installation
+# installation de Postgresql
 RUN apt-get -y update
 RUN apt-get -y install postgresql
 
 USER postgres
 
 COPY db/sql /sql
-# populate database
+# remplissage de la base de données
 RUN /etc/init.d/postgresql start &&\
     psql --command "CREATE USER deadlock WITH SUPERUSER PASSWORD 'no-passwd';" &&\
     createdb -O deadlock deadlock-db &&\

@@ -1,37 +1,39 @@
-# SQL missions
-A SQL mission is a code mission with a remote database as service, [more information about service](../multi-service).
-The main container will connect to the service, execute the user queries on it, then will check everything
-went well.
+# Missions SQL
+Une mission SQL est une mission classique de code avec une base de donnée distante injectée via un service. Plus d'infos sur les [services](../multi-service)   
+Le conteneur principal se connecte au service, exécute les requêtes du candidat puis vérifie que tout s'est bien déroulé.
 
-There is two main kinds of SQL missions:
+Il y a deux types principaux de missions SQL :
 
-#### Read-only missions
-For example your answer is something like
-```SELECT * FROM public."myTable" ...```
-In this case, you need to 
-* Run the expected answer and store answer _**first !**_
-* Run the given answer and store answer _**only after !**_
-* Compare both answer
+#### Missions en lecture seule
+Par exemple, la réponse à votre mission pourrait ressembler à  
+```SELECT * FROM public."myTable" ...```  
 
-_You need to run your order first to avoid rollback the database in case of the user modifies it_
+Dans ce cas vous avez besoin de : 
+
+* Exécuter la réponse attendue et stocker le résultat dans _**first !**_
+* Exécuter la réponse du candidat et stocker le résultat dans _**only after !**_
+* Comparer les deux réponses
+
+_Il est nécessaire d'exécuter votre réponse en premier afin d'éviter tout retour en arrière de la base de donnée que le code du candidat pourrait provoquer._
 
 
-#### Read-write missions
-This kind of mission is a little bit more complicated to validate. They mainly start with 
+#### Missions d'édition
+Ce type de mission est un peu plus compliqué à valider. Elles débutent généralement par :  
 ```DELETE/UPDATE/ALTER TABLE ... ```
-In this case, you need to write a checker.sql (usually with a ```SELECT``` request) file in addition to success/query.sql. 
-The success/query.sql will modifies the database (like the expected answer) and the checker.sql will select all interesting rows in the database
 
-* Run the expected answer
-* Run the checker.sql script and store the answer
-* Rollback the database
-* Run the given answer
-* Run the checker.sql script and store the answer
-* Compare both answer
+Dans ce cas, Il est nécessaire d'écrire un fichier `checker.sql` (généralement avec une requête ```SELECT```) en plus du fichier `success/query.sql`.  
+Le fichier `success/query.sql` modifie la base de données (c'est la réponse attendue) et le fichier `checker.sql` sélectionne toutes les lignes qui nous intéressent dans la base de données
+
+* Exécuter la réponse attendue
+* Exécuter le script `checker.sql` et stocker le résultat
+* Faire un retour-arrière sur la base de données
+* Exécuter la réponse donnée par le candidat
+* Exécuter le script `checker.sql` et stocker le résultat
+* Comparer les deux réponses
 
 
 
-### Tree example of SQL challenge
+### Exemple d'arborescence d'une mission SQL
 ```
 ├── app
 │   ├── pom.xml
@@ -78,5 +80,5 @@ The success/query.sql will modifies the database (like the expected answer) and 
 │   └── query.sql
 └── thumbnail.png
 ```
-### Example
-https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql
+### Exemple
+[https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql](https://github.com/deadlock-resources/challenge-examples/tree/master/example/code_sql)

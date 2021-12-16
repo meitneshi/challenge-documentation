@@ -1,15 +1,17 @@
-# Contributing to Deadlock missions
+# Aider à bâtir Deadlock
 
-An introduction to contributing to the Deadlock project.
+Ceci est une introduction à la contribution sur le projet Deadlock.
 
-Contributions can be made in a number of ways, a few examples are:
+Vous pouvez contribuer de plusieurs manières, par exemple : 
 
- * Code patches via pull requests
- * Documentation improvements
- * Bug reports and patch reviews
+ * En améliorant le code par des pull-requests
+ * En améliorant la documentation
+ * En rapportant des bugs ou en participants aux codes review des patchs
 
-Our projects you can contribute:
+Vous pouvez contribuer sur les projets suivants : 
 
-* [Challenge examples](https://github.com/deadlock-resources/challenge-examples)
-* [Challenge documentation](https://github.com/deadlock-resources/challenge-documentation)
+* [Exemples de missions](https://github.com/deadlock-resources/challenge-examples)
+* [Documentation des missions](https://github.com/deadlock-resources/challenge-documentation)
 * [Dcli](https://github.com/deadlock-resources/dcli)
+
+Vous pouvez également retrouver des ressources, des exemples et contribuer à l'amélioration de Deadlock [ici](https://git.e-biz.fr/deadlock-public )
