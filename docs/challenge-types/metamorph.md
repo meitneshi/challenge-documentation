@@ -379,3 +379,28 @@ Votre mission doit ressembler à cela :
     └── rust
         └── Main.rs
 ```
+
+#### Score
+
+Par défaut, quand un candidat clique sur le bouton **Soumettre**, les tests écrit dans `entry.rs` seront exécutés l'un après l'autre .
+Si un test échoue, les suivants ne seront pas exécutés et la mission sera considéré comme échouée. Si tous les tests passent, la mission est un succès.
+
+Il est possible d'ajouter un score à vos missions multi-langages. Dans ce cas, quand un étudiant soumettra son code, chaque 
+test s'exécutera même si certains échouent et un score sera calculé en fonction du nombre de tests qui auront réussis. 
+La mission sera considérée comme réussie si le score calculé est supérieur au score minimum spécifié dans le fichier `challenge.yaml`.
+
+Pour activer cette fonctionnalité, ajoutez simplement une ligne `score` dans le fichier `challenge.yaml`, comme dans l'exemple ci-dessous :
+
+```yaml
+# challenge.yaml
+# ...
+coding:
+  templateDirectory: /opt/runner
+  successDirectory: success/
+  target: Main.js
+  editorMode: javascript
+  score:
+    min: 0 # Optionnel, par défaut : 0
+    minToValidate: 90 # Obligatoire
+    max: 100 # Optionnel, par défaut : 100
+```
