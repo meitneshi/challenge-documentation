@@ -27,6 +27,10 @@ nav:
      - Multi-service: challenge-types/multi-service.md
      - Score: challenge-types/score.md
      - SQL: challenge-types/sql.md
+  - Répertoires externes:
+     - Pour Commencer: external-repositories-guides/external-repositories.md
+     - Guide de l'administrateur: external-repositories-guides/admin-guide.md
+     - Guide du mainteneur: external-repositories-guides/maintainer-guide.md
   - A propos:
     - Contribuer: contributing.md
 
