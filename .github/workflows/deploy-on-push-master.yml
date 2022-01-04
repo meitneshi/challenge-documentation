@@ -1,0 +1,37 @@
+name: "Build and deploy Github pages"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+      # 1. Checkout repo
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      # 2. Build de la doc
+      - name: "Set up Python"
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: "Install Python dependencies"
+        run: |
+          pip3 install mkdocs==1.2.3
+          pip3 install mkdocs-material==8.1.1
+          pip3 install -Iv pymdown-extensions==9.1
+
+      - name: "Build Deadlock Doc"
+        run: |
+          mkdocs build
+
+      - name: "Push on branch gh-pages to trigger deploy"
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages     # <- Branche sur laquelle seront commités les fichiers
+          FOLDER: site/        # <- Dossier contenant notre documentation générée
