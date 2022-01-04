@@ -1,139 +1,134 @@
 
-
-
-
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="fr" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
-        <title>How does it work ? - Deadlock Missions Docs</title>
+        <title>Comment ça marche ? - Documentation Missions Deadlock</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.23b6d78a.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
-        <meta name="theme-color" content="#2196f3">
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
       
     
     
-      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
-    
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
-    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#how-does-it-work" tabindex="0" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Deadlock Missions Docs" aria-label="Deadlock Missions Docs" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">library_books</i>
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comment-ca-marche" class="md-skip">
+          Aller au contenu
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Deadlock Missions Docs
-            </span>
-            <span class="md-header-nav__topic">
-              
-                How does it work ?
-              
-            </span>
-          
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Documentation Missions Deadlock" class="md-header__button md-logo" aria-label="Documentation Missions Deadlock" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation Missions Deadlock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comment ça marche ?
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
-<div class="md-search" data-md-component="search" role="dialog">
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initialisation de la recherche
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -141,89 +136,100 @@
     </div>
   </div>
 </div>
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
-      
-        
+    <div class="md-container" data-md-component="container">
       
       
         
-
-<nav class="md-tabs" data-md-component="tabs">
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
-  <li class="md-tabs__item">
+  
+  
     
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href=".." class="md-tabs__link md-tabs__link--active">
-        Home
+        Accueil
       </a>
-    
-  </li>
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../challenge-types/vscode/" class="md-tabs__link">
-          Types of challenge
-        </a>
-      
     </li>
   
 
       
         
-      
-        
-      
-        
-      
-        
+  
+  
+
+
+  
   
   
     <li class="md-tabs__item">
-      
-        <a href="../contributing/" class="md-tabs__link">
-          About
-        </a>
-      
+      <a href="../challenge-types/vscode/" class="md-tabs__link">
+        Types de missions
+      </a>
     </li>
   
 
       
         
-      
-        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        A propos
+      </a>
+    </li>
+  
+
       
     </ul>
   </div>
 </nav>
+          
+        
       
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href=".." title="Deadlock Missions Docs" class="md-nav__button md-logo">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation Missions Deadlock" class="md-nav__button md-logo" aria-label="Documentation Missions Deadlock" data-md-component="logo">
       
-        <i class="md-icon">library_books</i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
-    Deadlock Missions Docs
+    Documentation Missions Deadlock
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -232,153 +238,140 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
+  
+  
     
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
+      
+        <label class="md-nav__link" for="__nav_1">
+          Accueil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Accueil" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Accueil
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Missions dans Deadlock
+      </a>
+    </li>
+  
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/" class="md-nav__link">
+        Besoin d'aide
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submit/" class="md-nav__link">
+        Soumission
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/code/" class="md-nav__link">
+        Exemples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mode/" class="md-nav__link">
+        Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Comment ça marche ?
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Comment ça marche ?
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-2">
-      Types of challenge
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Types of challenge
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/vscode/" title="VsCode" class="md-nav__link">
-      VsCode
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/metamorph/" title="Multi language" class="md-nav__link">
-      Multi language
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/multi-service/" title="Multi service" class="md-nav__link">
-      Multi service
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/score/" title="Score" class="md-nav__link">
-      Score
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/sql/" title="SQL" class="md-nav__link">
-      SQL
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../challenge-types/code/" title="Examples" class="md-nav__link">
-      Examples
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../mode/" title="Mode" class="md-nav__link">
-      Mode
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        How does it work ?
-      </label>
-    
-    <a href="./" title="How does it work ?" class="md-nav__link md-nav__link--active">
-      How does it work ?
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#dockerfile" class="md-nav__link">
@@ -388,81 +381,177 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mission-descriptor" class="md-nav__link">
-    Mission descriptor
+  <a href="#descripteur-de-mission" class="md-nav__link">
+    Descripteur de mission
   </a>
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
-    
-  </li>
-
-    
       
-      
-      
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      About
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        About
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../contributing/" title="Contributing" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Types de missions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Types de missions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Types de missions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/vscode/" class="md-nav__link">
+        VsCode
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../help/" title="Getting help" class="md-nav__link">
-      Getting help
-    </a>
-  </li>
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/metamorph/" class="md-nav__link">
+        Multi-langage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/multi-service/" class="md-nav__link">
+        Multi-service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/score/" class="md-nav__link">
+        Score
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../challenge-types/sql/" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          A propos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="A propos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          A propos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contribuer
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../submit/" title="Submit" class="md-nav__link">
-      Submit
-    </a>
-  </li>
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -472,18 +561,24 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#dockerfile" class="md-nav__link">
@@ -493,15 +588,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mission-descriptor" class="md-nav__link">
-    Mission descriptor
+  <a href="#descripteur-de-mission" class="md-nav__link">
+    Descripteur de mission
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -511,32 +602,33 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="how-does-it-work">How does it work ?</h1>
-<p>If you are here, you already read the <a href="/#getting-started">Getting Started</a> and you want to explore more about how a mission works.
-We are going to explain you different files, </p>
-<p>To be sure to understand the next parts you have to be familiar with:</p>
+
+<h1 id="comment-ca-marche">Comment ça marche ?</h1>
+<p>Si vous êtes ici, nous supposons que vous avez déjà parcouru <a href="/#pour-commencer">les bases</a> et vous désirez en apprendre plus sur comment une mission fonctionne.<br />
+Nous allons vous expliquer l'utilité de tous les fichiers d'une mission.</p>
+<p>Pour être à l'aise avec la suite, vous devez posséder les bases en : </p>
 <ul>
 <li><a href="https://www.docker.com/">Docker</a></li>
-<li>Yaml file</li>
+<li>Fichier Yaml</li>
 </ul>
 <h4 id="dockerfile">Dockerfile</h4>
-<p>When your candidate submits his code, a Docker container will be created.
-The name of the Docker image will be your mission name, prefixed with <strong>code_</strong>.<br />
-<strong>Important:</strong> your container should have its own CMD or ENTRYPOINT defined.
-Before your container is executed, your candidate code will be pasted within <strong>template</strong> folder.
-<strong>Where</strong> and <strong>what</strong> this file is entirely up to you and shall be submitted in the <a href="#challenge-descriptor">descriptor</a>.</p>
-<p>Once the code is inside the container, your container will be ran until completion.
-Note that the STDOUT and STDERR signals will be streamed to the candidate.
-Once it completes, the exit code will be checked.</p>
-<p>If the <strong>exit code</strong> is <strong>0</strong>, the mission was <strong>completed</strong> successfully.
-<strong>Otherwise</strong>, it means the candidate has <strong>failed</strong>.</p>
-<p>You can custom the Dockerfile has you wish, include external library to allow your user to have new experiences !<br />
-Example of a python mission with <strong>nymphy, sklearn and pandas libraries</strong>:<br />
+<p>Quand un candidat soumet son code, un conteneur Docker est créé.<br />
+Le nom de l'image Docker sera le nom de votre mission préfixée de <strong>code_</strong>.<br />
+<strong>Important</strong> : Vous devez définir CMD et ENTRYPOINT spécifiquement pour votre conteneur.<br />
+Avant l'exécution de votre conteneur, le code du candidat est collé dans le dossier <strong>template</strong>.<br />
+<strong>L'emplacement</strong> et <strong>le contenu</strong> de ce fichier vous est propre et doit être soumis dans le <a href="#descripteur-de-mission">descripteur</a>.</p>
+<p>Une fois le code déployé dans le conteneur, ce dernier va s'exécuter jusqu'à la fin de vos instructions.
+Rappelez-vous que les signaux STDOUT et STDERR seront affichés dans la console du candidat.
+Une fois terminé, le code de sortie est vérifié.</p>
+<p>Si le <strong>code de sortie</strong> est <strong>0</strong>, la mission est un <strong>succès</strong>.<br />
+<strong>Sinon</strong>, cela veut dire que le candidat a <strong>échoué</strong>.</p>
+<p>Vous pouvez personnaliser le Dockerfile à volonté en incluant par exemple des librairies externes pour permettre au candidat
+d'avoir accès à encore plus de fonctionnalités !</p>
+<p>Exemple d'une mission python incluant les librairies <strong>nymphy, sklearn et pandas</strong>
 <div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">python:3.7-slim</span>
 <span class="k">RUN</span> pip install numpy sklearn pandas
 <span class="k">WORKDIR</span><span class="s"> /</span>
@@ -546,100 +638,96 @@ Example of a python mission with <strong>nymphy, sklearn and pandas libraries</s
 <span class="k">RUN</span> chmod +x run.sh
 <span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/run.sh&quot;</span><span class="p">]</span>
 </code></pre></div>
-The build step is done only one time when your mission is accepeted by the Deadlock team.</p>
-<h4 id="mission-descriptor">Mission descriptor</h4>
-<p>Each mission has its own mission descriptor in challengename/challenge.yaml.
-It is used to create the mission container and retrieve your specifications regarding the language and file target.</p>
-<div class="highlight"><pre><span></span><code>version: <span class="m">1</span>.0 <span class="c1"># You have to increase it if you have changed something in your code</span>
-name: code_halloween_candy <span class="c1"># your mission name. MUST be equal to the mission folder</span>
-label: Halloween Candy <span class="c1"># your mission label</span>
-description: Help your brother split his halloween candy <span class="c1"># your mission description, in english</span>
-level: jarjarbinks <span class="c1"># your mission level. From easiest to hardest: jarjarbinks, ewok, padawan, jedi, master</span>
-type: CODING <span class="c1"># this is a coding game</span>
+L'étape de build est effectuée une foi seulement lorsque la mission est acceptée par l'équipe Deadlock.</p>
+<h4 id="descripteur-de-mission">Descripteur de mission</h4>
+<p>Chaque mission a son propre descripteur disponible dans challengename/challenge.yml.<br />
+Il est utilisé pour créer le conteneur de mission et récupérer les spécificités de la mission concernant les langages et fichiers cibles</p>
+<div class="highlight"><pre><span></span><code>version: <span class="m">1</span>.0 <span class="c1"># A incrémenter si le code évolue</span>
+name: code_halloween_candy <span class="c1"># Le nom de la missions. Il DOIT être identique au nom du dossier de la mission</span>
+label: Halloween Candy <span class="c1"># Le libellé de la mission</span>
+description: Help your brother split his halloween candy <span class="c1"># La description de la mission en anglais</span>
+level: jarjarbinks <span class="c1"># Le niveau de la mission. Du plus facile au plus difficile : jarjarbinks, ewok, padawan, jedi, master</span>
+type: CODING <span class="c1"># Le type de la mission. Ici : coding game</span>
 meta:
-  private: <span class="nb">true</span> <span class="c1"># if true mission will only be visible on your instance (youSchool.deadlock.io), default to false, visible by everyone.</span>
-xp: <span class="c1"># the experience it should bring. any label is supported</span>
-  programming: <span class="m">1</span> <span class="c1"># this is a weight, not a number</span>
+  private: <span class="nb">true</span> <span class="c1"># Si true, la mission sera uniquement visible sur votre instance &quot;ecole.deadlock.io), par défaut : false --&gt; visible par tout le monde.</span>
+xp: <span class="c1"># le nombre de points d&#39;expérience que cette mission rapporte dans chaque domaine listé en dessous</span>
+  programming: <span class="m">1</span> <span class="c1"># Il s&#39;agit d&#39;un poids et non d&#39;un simple nombre.</span>
   java: <span class="m">1</span>
-coding: <span class="c1"># coding game specifics</span>
-  templateDirectory: src/java/main/template <span class="c1"># code provided to the user</span>
-  successDirectory: src/java/main/success <span class="c1"># solution of the challenge</span>
-  target: CandySplitter.java <span class="c1"># the target file path, consider as Main file</span>
-  editorMode: java <span class="c1"># the language to be displayed by the web editor</span>
+coding: <span class="c1"># Spécifique au challenge de type code</span>
+  templateDirectory: src/java/main/template <span class="c1"># Le code fournit au candidat</span>
+  successDirectory: src/java/main/success <span class="c1"># La solution de la mission</span>
+  target: CandySplitter.java <span class="c1"># Le path du fichier cible considéré comme fichier Main</span>
+  editorMode: java <span class="c1"># Le langage à afficher dans l&#39;éditeur Web</span>
 </code></pre></div>
-                
-                  
-                
-                
-              
-              
-                
-
 
               
             </article>
           </div>
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
         
-          <a href="../mode/" title="Mode" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Mode
+        <a href="../mode/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Mode" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
               </span>
+              Mode
             </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../contributing/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Contributing
+        <a href="../challenge-types/vscode/" class="md-footer__link md-footer__link--next" aria-label="Suivant: VsCode" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
               </span>
+              VsCode
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
-      <script src="../assets/javascripts/application.c33a9706.js"></script>
-      
-      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+    
+      <script src="../assets/javascripts/bundle.da79ceb7.min.js"></script>
       
     
   </body>
