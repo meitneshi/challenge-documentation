@@ -269,7 +269,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Missions dans Deadlock TOTOTOTOTO
+        Missions dans Deadlock tata
       </a>
     </li>
   
@@ -676,36 +676,36 @@ Mais avant toute chose, vous devez être familier avec le <a href="../../#pour-c
 <li><strong>base</strong> dossier contenant les fichiers utilisateurs, ces fichiers seront fournis au candidat lorsque l'IDE démarre.</li>
 <li><strong>docs</strong> contient le briefing, les instructions utilisateurs. Le briefing sera ouvert au démarrage de l'IDE. </li>
 <li><strong>Dockerfile</strong>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">registry.e-biz.fr/deadlock-public/deadlock-theia:latest</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">registry.e-biz.fr/deadlock-public/deadlock-theia:latest</span>
 
 <span class="c"># Vous pouvez installer tout ce que vous voulez</span>
 <span class="c"># Le gestionnaire de package est *apt*</span>
 
 <span class="c"># les path de destination paths ne doivent pas être modifiés</span>
-<span class="k">COPY</span> base /project # copie le repertoire user dans /project
-<span class="k">COPY</span> docs /home/theia/docs # copie les instructions
+<span class="k">COPY</span><span class="w"> </span>base /project # copie le repertoire user dans /project
+<span class="k">COPY</span><span class="w"> </span>docs /home/theia/docs # copie les instructions
 </code></pre></div></li>
 <li><strong>challenge.yaml</strong> est le fichier descripteur
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_persist_crud</span>
-<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Crud</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">This is your moment, you have to create your own CRUD. Your customer requested you to build a Computer DataBase application (codename *CDB*).</span>
-<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span> <span class="c1"># difficulté du challenge [comment ça marche](https://deadlock-resources.github.io/challenge-documentation/#level)</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PERSISTENT</span> <span class="c1"># obligatoire</span>
-<span class="nt">xp</span><span class="p">:</span> <span class="c1"># points d&#39;expérience, vous pouvez ajouter les labels que vous voulez</span>
-  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span> <span class="c1"># c&#39;est un poids, pas un nombre</span>
-  <span class="nt">java</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">coding</span><span class="p">:</span>
-  <span class="nt">userDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">base</span>
-<span class="nt">resources</span><span class="p">:</span> <span class="c1"># Ressources allouées au conteneur, ne pas modifier si vous n&#39;êtes pas confiant sur le sujet</span>
-  <span class="nt">cpuLimit</span><span class="p">:</span> <span class="s">&quot;1200m&quot;</span>
-  <span class="nt">memoryLimit</span><span class="p">:</span> <span class="s">&quot;1200Mi&quot;</span>
-  <span class="nt">cpuRequest</span><span class="p">:</span> <span class="s">&quot;1000m&quot;</span>
-  <span class="nt">memoryRequest</span><span class="p">:</span> <span class="s">&quot;1000Mi&quot;</span>
-<span class="nt">persistent</span><span class="p">:</span>
-  <span class="nt">ports</span><span class="p">:</span> <span class="c1"># ports que vous souhaitez laisser ouvert pour le candidat</span>
-    <span class="nt">web</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span> <span class="c1"># obligatoire</span>
-    <span class="nt">crud</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span> <span class="c1"># la personne se verra attribuer une url qui redirigera vers le port 9090</span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code_persist_crud</span><span class="w"></span>
+<span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Crud</span><span class="w"></span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is your moment, you have to create your own CRUD. Your customer requested you to build a Computer DataBase application (codename *CDB*).</span><span class="w"></span>
+<span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ewok</span><span class="w"> </span><span class="c1"># difficulté du challenge [comment ça marche](https://deadlock-resources.github.io/challenge-documentation/#level)</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PERSISTENT</span><span class="w"> </span><span class="c1"># obligatoire</span><span class="w"></span>
+<span class="nt">xp</span><span class="p">:</span><span class="w"> </span><span class="c1"># points d&#39;expérience, vous pouvez ajouter les labels que vous voulez</span><span class="w"></span>
+<span class="w">  </span><span class="nt">programming</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># c&#39;est un poids, pas un nombre</span><span class="w"></span>
+<span class="w">  </span><span class="nt">java</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="nt">coding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">userDirectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base</span><span class="w"></span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="c1"># Ressources allouées au conteneur, ne pas modifier si vous n&#39;êtes pas confiant sur le sujet</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cpuLimit</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1200m&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">memoryLimit</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1200Mi&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cpuRequest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1000m&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">memoryRequest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1000Mi&quot;</span><span class="w"></span>
+<span class="nt">persistent</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c1"># ports que vous souhaitez laisser ouvert pour le candidat</span><span class="w"></span>
+<span class="w">    </span><span class="nt">web</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span><span class="w"> </span><span class="c1"># obligatoire</span><span class="w"></span>
+<span class="w">    </span><span class="nt">crud</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span><span class="w"> </span><span class="c1"># la personne se verra attribuer une url qui redirigera vers le port 9090</span><span class="w"></span>
 </code></pre></div></li>
 <li><strong>thumbnail.png</strong> image du challenge </li>
 </ul>
@@ -733,14 +733,14 @@ service postgresql start
 <p>Le script <code>startup.sh</code> s'exécute lorsque le conteneur Docker démarre.</p>
 <p><em>Si vous avez besoin de remplir la base de données, il est préférable de le faire dans le Dockerfile (utiliser un script au démarrage va allonger le démarrage du container) :</em>
 <div class="highlight"><pre><span></span><code><span class="c"># installation de Postgresql</span>
-<span class="k">RUN</span> apt-get -y update
-<span class="k">RUN</span> apt-get -y install postgresql
+<span class="k">RUN</span><span class="w"> </span>apt-get -y update
+<span class="k">RUN</span><span class="w"> </span>apt-get -y install postgresql
 
-<span class="k">USER</span><span class="s"> postgres</span>
+<span class="k">USER</span><span class="w"> </span><span class="s">postgres</span>
 
-<span class="k">COPY</span> db/sql /sql
+<span class="k">COPY</span><span class="w"> </span>db/sql /sql
 <span class="c"># remplissage de la base de données</span>
-<span class="k">RUN</span> /etc/init.d/postgresql start <span class="o">&amp;&amp;</span><span class="se">\</span>
+<span class="k">RUN</span><span class="w"> </span>/etc/init.d/postgresql start <span class="o">&amp;&amp;</span><span class="se">\</span>
     psql --command <span class="s2">&quot;CREATE USER deadlock WITH SUPERUSER PASSWORD &#39;no-passwd&#39;;&quot;</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
     createdb -O deadlock deadlock-db <span class="o">&amp;&amp;</span><span class="se">\</span>
     psql -d deadlock-db -U deadlock -f /sql/1__schema.sql -f /sql/2__entries.sql <span class="o">&amp;&amp;</span><span class="err">\</span>

@@ -271,7 +271,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Missions dans Deadlock TOTOTOTOTO
+        Missions dans Deadlock tata
       </a>
     </li>
   
@@ -629,14 +629,14 @@ Une fois terminé, le code de sortie est vérifié.</p>
 <p>Vous pouvez personnaliser le Dockerfile à volonté en incluant par exemple des librairies externes pour permettre au candidat
 d'avoir accès à encore plus de fonctionnalités !</p>
 <p>Exemple d'une mission python incluant les librairies <strong>nymphy, sklearn et pandas</strong>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">python:3.7-slim</span>
-<span class="k">RUN</span> pip install numpy sklearn pandas
-<span class="k">WORKDIR</span><span class="s"> /</span>
-<span class="k">COPY</span> src src
-<span class="k">COPY</span> wine.csv src/main/
-<span class="k">COPY</span> run.sh /
-<span class="k">RUN</span> chmod +x run.sh
-<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/run.sh&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.7-slim</span>
+<span class="k">RUN</span><span class="w"> </span>pip install numpy sklearn pandas
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/</span>
+<span class="k">COPY</span><span class="w"> </span>src src
+<span class="k">COPY</span><span class="w"> </span>wine.csv src/main/
+<span class="k">COPY</span><span class="w"> </span>run.sh /
+<span class="k">RUN</span><span class="w"> </span>chmod +x run.sh
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/run.sh&quot;</span><span class="p">]</span>
 </code></pre></div>
 L'étape de build est effectuée une foi seulement lorsque la mission est acceptée par l'équipe Deadlock.</p>
 <h4 id="descripteur-de-mission">Descripteur de mission</h4>

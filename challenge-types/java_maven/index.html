@@ -267,7 +267,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Missions dans Deadlock TOTOTOTOTO
+        Missions dans Deadlock tata
       </a>
     </li>
   
@@ -580,24 +580,24 @@ mvn -B dependency:copy-dependencies -DoutputDirectory<span class="o">=</span>jar
 </code></pre></div></p>
 <p>Ensuite, les dépendances sont ajouté au Dockerfile 
 <div class="highlight"><pre><span></span><code><span class="c"># Ajoute les jars de toutes les dépendances</span>
-<span class="k">ADD</span> jar src/main/java/jar
+<span class="k">ADD</span><span class="w"> </span>jar src/main/java/jar
 </code></pre></div></p>
 <h3 id="fichier-challengeyml">Fichier Challenge.yml</h3>
 <p>Vou devez compléter le fichier <code>challenge.yaml</code> : 
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_calculator</span>
-<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calculator challenge</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Implement calculator operations</span>
-<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CODING</span>
-<span class="nt">xp</span><span class="p">:</span>
-  <span class="nt">java</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">coding</span><span class="p">:</span>
-  <span class="nt">templateDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/main/java/template</span>
-  <span class="nt">successDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">src/main/java/success</span>
-  <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calculator.java</span>
-  <span class="nt">editorMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">java</span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code_calculator</span><span class="w"></span>
+<span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calculator challenge</span><span class="w"></span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implement calculator operations</span><span class="w"></span>
+<span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ewok</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CODING</span><span class="w"></span>
+<span class="nt">xp</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">java</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">programming</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="nt">coding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">templateDirectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/main/java/template</span><span class="w"></span>
+<span class="w">  </span><span class="nt">successDirectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/main/java/success</span><span class="w"></span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calculator.java</span><span class="w"></span>
+<span class="w">  </span><span class="nt">editorMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">java</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="dossier-template-et-success">Dossier Template et Success</h3>
 <p>Le dossier <code>template/</code> contient le code écrit par le candidat tentant de résoudre la mission.</p>

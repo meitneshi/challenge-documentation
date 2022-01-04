@@ -269,7 +269,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Missions dans Deadlock TOTOTOTOTO
+        Missions dans Deadlock tata
       </a>
     </li>
   
@@ -795,27 +795,27 @@ Par défaut, pour chaque langage, le candidat dispose d'un template. Vous pouvez
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;fmt&quot;</span>
-    <span class="s">&quot;os&quot;</span>
-<span class="p">)</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;os&quot;</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="nx">Fibonacci</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">int64</span><span class="p">{</span>
-    <span class="k">return</span> <span class="nx">n</span> 
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">Fibonacci</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="kt">int64</span><span class="p">)</span><span class="w"> </span><span class="kt">int64</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// args given, code submitted</span>
-        <span class="nx">arg</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// args given, code submitted</span><span class="w"></span>
+<span class="w">        </span><span class="nx">arg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
 
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Fibonacci</span><span class="p">(</span><span class="nx">arg</span><span class="p">))</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// no given, code ran</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Fibonacci</span><span class="p">(</span><span class="nx">arg</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// no given, code ran</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 </div>
@@ -1046,8 +1046,8 @@ Continuons avec plus de tests :<br />
 <h4 id="tests-aleatoires">Tests aléatoires</h4>
 <p>Cela vous semble trop statique ?
 Vous pouvez ajouter des tests plus complexe avec des entrées aléatoires en utilisant la méthode <code>random</code> fournie par notre runner :<br />
-<div class="highlight"><pre><span></span><code><span class="nt">randt(n)</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">génère un nombre aléatoire entre 0 et n exclu.</span>
-<span class="l l-Scalar l-Scalar-Plain">randft(n, m)</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gnère un nombre aléatoire entre n et m exclu.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">randt(n)</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">génère un nombre aléatoire entre 0 et n exclu.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">randft(n, m)</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gnère un nombre aléatoire entre n et m exclu.</span><span class="w"></span>
 </code></pre></div>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1148,20 +1148,20 @@ Ce n'est pas un problème, tout ce que vous avez à faire est d'ajouter le param
 </code></pre></div>
 Il sera servi au candidat en tant que <em>Chaîne de caractère</em>.</p>
 <p>Dès que vous aurez compléter le fichier <code>entry.rs</code>, il faut compléter le fichier <code>challenge.yaml</code> :
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">code_metamorph_fibo</span>
-<span class="nt">label</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Fibonacci</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Implements Fibonacci algorithm</span>
-<span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ewok</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CODING</span>
-<span class="nt">metamorph</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">xp</span><span class="p">:</span>
-  <span class="nt">programming</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">coding</span><span class="p">:</span>
-  <span class="nt">templateDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/opt/runner</span>
-  <span class="nt">successDirectory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">success/</span>
-  <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main.rs</span>
-  <span class="nt">editorMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rust</span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code_metamorph_fibo</span><span class="w"></span>
+<span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fibonacci</span><span class="w"></span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Implements Fibonacci algorithm</span><span class="w"></span>
+<span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ewok</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CODING</span><span class="w"></span>
+<span class="nt">metamorph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="nt">xp</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">programming</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="nt">coding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">templateDirectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/runner</span><span class="w"></span>
+<span class="w">  </span><span class="nt">successDirectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main.rs</span><span class="w"></span>
+<span class="w">  </span><span class="nt">editorMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rust</span><span class="w"></span>
 </code></pre></div></p>
 <p>Le dossier <code>success/</code> contient votre solution qui sera donnée au candidat lorsqu'il aura résolu le problème de la mission.<br />
 Vous êtes libre de choisir le langage et la logique d'implémentation de votre solution.  </p>
