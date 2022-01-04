@@ -8,25 +8,28 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  feature:
-    instant: true
-    language: fr
+  features:
+    - navigation.tabs
+    - navigation.instant
+  language: fr
 
 nav:
-  - Accueil: index.md
+  - Accueil:
+     - index.md
+     - Besoin d'aide: help.md
+     - Soumission: submit.md
+     - Exemples: challenge-types/code.md
+     - Mode: mode/index.md
+     - Comment ça marche ?: how-does-it-work.md
   - Types de missions:
      - VsCode: challenge-types/vscode.md
      - Multi-langage: challenge-types/metamorph.md
      - Multi-service: challenge-types/multi-service.md
      - Score: challenge-types/score.md
      - SQL: challenge-types/sql.md
-  - Exemples: challenge-types/code.md
-  - Mode: mode/index.md
-  - Comment ça marche ?: how-does-it-work.md
   - A propos:
     - Contribuer: contributing.md
-  - Besoin d'aide: help.md
-  - Soumission: submit.md
+
 markdown_extensions:
   - markdown.extensions.admonition:
   - pymdownx.superfences:
